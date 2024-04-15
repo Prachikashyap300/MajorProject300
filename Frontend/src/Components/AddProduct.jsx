@@ -1,7 +1,7 @@
 import React from 'react'
-import im from '../assets/bg.jpg'
 
-const Login = () => {
+
+const AddProduct = () => {
   return (
     <div className='container'>
       <div className="row mt-5 p-5">
@@ -31,4 +31,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default AddProduct

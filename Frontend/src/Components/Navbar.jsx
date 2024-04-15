@@ -37,27 +37,6 @@ const Navbar = () => {
                   Login
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/EventHandling">
-                  Eventhandling
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Eh">
-                  Han
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/ManageUser">
-                 Manage user
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/AddProduct">
-                  Add Product
-                </Link>
-              </li>
-            
             </ul>
           </div>
         </div>
