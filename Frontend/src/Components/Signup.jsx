@@ -53,7 +53,7 @@ const Signup = () => {
       <div className="row p-5">
         <div className="col p-2">
           <div className="card  w-75 d-block mx-auto">
-            <div className="card-header text-white">
+            <div className="card-header ">
               <h3 className="font">Signup</h3>
             </div>
             <div className="card-body">
@@ -68,7 +68,7 @@ const Signup = () => {
                       <input
                         placeholder="First Name"
                         type="text"
-                        className="font-2 form-control mb-3 inp bg-dark"
+                        className="font-2 form-control mb-3 inp "
                         id="fname"
                         onChange={signupForm.handleChange}
                         value={signupForm.values.fname}
@@ -81,7 +81,7 @@ const Signup = () => {
                     <input
                       placeholder="Last Name"
                       type="text"
-                      className="font-2 form-control mb-3  inp bg-dark text-white"
+                      className="font-2 form-control mb-3  inp "
                       id="lname"
                       onChange={signupForm.handleChange}
                       value={signupForm.values.lname}
@@ -97,7 +97,7 @@ const Signup = () => {
                   <input
                     placeholder="Email"
                     type="text"
-                    className="font-2 form-control mb-3  inp bg-dark text-white"
+                    className="font-2 form-control mb-3  inp "
                     id="email"
                     onChange={signupForm.handleChange}
                     value={signupForm.values.email}
@@ -110,7 +110,7 @@ const Signup = () => {
                   <input
                     placeholder="Course"
                     type="text"
-                    className="font-2 form-control mb-3  inp bg-dark text-white"
+                    className="font-2 form-control mb-3  inp"
                     id="course"
                     onChange={signupForm.handleChange}
                     value={signupForm.values.course}
@@ -123,7 +123,7 @@ const Signup = () => {
                   <input
                     placeholder="Semester"
                     type="text"
-                    className="font-2 form-control mb-3  inp bg-dark text-white"
+                    className="font-2 form-control mb-3  inp "
                     id="semester"
                     onChange={signupForm.handleChange}
                     value={signupForm.values.semester}
@@ -136,7 +136,7 @@ const Signup = () => {
                   <input
                     placeholder="College"
                     type="text"
-                    className="font-2 form-control mb-3  inp bg-dark text-white"
+                    className="font-2 form-control mb-3  inp "
                     id="college"
                     onChange={signupForm.handleChange}
                     value={signupForm.values.college}
@@ -152,7 +152,7 @@ const Signup = () => {
                       <input
                         placeholder="Password"
                         type="text"
-                        className="font-2 form-control mb-3  inp bg-dark text-white"
+                        className="font-2 form-control mb-3  inp "
                         id="password"
                         onChange={signupForm.handleChange}
                         value={signupForm.values.password}
@@ -167,7 +167,7 @@ const Signup = () => {
                         <input
                           placeholder="Confirm Password"
                           type="text"
-                          className="font-2 form-control mb-3  inp bg-dark text-white "
+                          className="font-2 form-control mb-3  inp  "
                           id="cpassword"
                           onChange={signupForm.handleChange}
                           value={signupForm.values.cpassword}

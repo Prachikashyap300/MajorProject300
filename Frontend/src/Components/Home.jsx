@@ -6,8 +6,8 @@ const Home = () => {
     enqueueSnackbar('su !')
   }
   return (
-    <div>Home
-      <button onClick={ handleButtonClick }>CLICK</button>
+    <div className="container-fluid home-bg">
+      <button className='gradient-btn'>hello</button>
     </div>
   )
 }

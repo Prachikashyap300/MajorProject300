@@ -56,7 +56,7 @@ const Login = () => {
                   id='email'
                   onChange={loginForm.handleChange}
                   value={loginForm.values.email}
-                  className='font-2 form-control inp mb-4 bg-dark text-white ' />
+                  className='font-2 form-control inp mb-4' />
                 </div>
                 <div className="from-group">
                 <span style={{ color: "yellow", fontSize: "10" }}>
@@ -66,7 +66,7 @@ const Login = () => {
                   id='password'
                   onChange={loginForm.handleChange}
                   value={loginForm.values.password}
-                   className='font-2 form-control inp mb-4 bg-dark text-white ' />
+                   className='font-2 form-control inp mb-4  ' />
                 </div>
                 <button type='submit' className=' font-2 w-100 button'>Login</button>
               </form>
