@@ -7,8 +7,8 @@ import "../App.css";
 import { Link } from 'react-router-dom';
 
 const LoginSchema = Yup.object().shape({
-  email: Yup.string().required("Email is requ"),
-  password: Yup.string().required("Password is requ"),
+  email: Yup.string().required("Email is required"),
+  password: Yup.string().required("Password is required"),
 });
 
 const Login = () => {
@@ -42,8 +42,8 @@ const Login = () => {
     <div className="container">
           <div className="card form-card">
             <div className="card-header">
-              <h2 className="font">
-                Welcome to IdeaHub <br /> Login to continue
+              <h2 className="font-3">
+                Welcome to Exhibix   <br /> Login to continue
               </h2>
             </div>
             <div className="card-body">
@@ -79,7 +79,7 @@ const Login = () => {
                 </div>
                 <div className="text-center">
                   <button type="submit" className="font-2 submit-button">
-                    <p>Signup</p>
+                    <p>Login</p>
                   </button>
                   <p className="mt-5 text-center">Dont have an account? <Link className="links" to="/Signup">Signup</Link></p>
                 </div>

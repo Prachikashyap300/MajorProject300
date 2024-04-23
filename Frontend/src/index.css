@@ -5,7 +5,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
-    color: white;
+    color: black;
     font-size: 34px;
     text-decoration: none;
 }
@@ -34,5 +34,5 @@ body{
     /* font-optical-sizing: auto; */
     font-weight: 500;
     /* font-style: normal; */
-    font-size: 20px;
+    font-size: 50px;
 }

@@ -7,9 +7,12 @@ const Navbar = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark nav-bg">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/Home">
+          
+          <Link className="navbar-brand font" to="/Home">
             Exhibix
-          </a>
+          </Link>
+          
+          
           <button
             className="navbar-toggler"
             type="button"
@@ -41,6 +44,11 @@ const Navbar = () => {
               <li className="nav-item text-white">
                 <Link className="nav-link" to="/AddProject">
                   Add Project
+                </Link>
+              </li>
+              <li className="nav-item text-white">
+                <Link className="nav-link" to="/ManageUSer">
+                  Manage User
                 </Link>
               </li>
               

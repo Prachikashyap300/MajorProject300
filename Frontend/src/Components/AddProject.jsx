@@ -5,10 +5,10 @@ import { enqueueSnackbar } from "notistack";
 import { Link } from "react-router-dom";
 
 const AddProjectSchema = Yup.object().shape({
-  pname: Yup.string().required("Name is requi#051832"),
-  pcateogory: Yup.string().required("pcateogory is requi#051832"),
-  pprice: Yup.string().required("pprice is requi#051832"),
-  pdescription: Yup.string().required("pdescription is requi#051832"),
+  pname: Yup.string().required("Name is required"),
+  // pcateogory: Yup.string().required("pcateogory is required"),
+  // pprice: Yup.string().required("Price is required"),
+  pdescription: Yup.string().required("Description is required"),
 });
 
 const AddProject = () => {
@@ -61,13 +61,12 @@ const AddProject = () => {
     <div className="container">
       <div className="card form-card">
         <div className="card-header">
-          <h3>Add Project</h3>
+          <h3 className="font-3">Project Details</h3>
         </div>
         <div className="card-body">
           {/* step2: handling when submit */}
           <form onSubmit={AddProjectForm.handleSubmit}>
             <div className="form-group">
-              <label>Name</label>
               <span style={{ color: "#051832", fontSize: "10" }}>
                 {AddProjectForm.touched.pname && AddProjectForm.errors.pname}
               </span>
@@ -80,7 +79,7 @@ const AddProject = () => {
                 value={AddProjectForm.values.pname}
               />
             </div>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label>Cateogory</label>
               <span style={{ color: "#051832", fontSize: "10" }}>
                 {AddProjectForm.touched.pcateogory &&
@@ -93,8 +92,8 @@ const AddProject = () => {
                 onChange={AddProjectForm.handleChange}
                 value={AddProjectForm.values.pcateogory}
               />
-            </div>
-            <div className="form-group">
+            </div> */}
+            {/* <div className="form-group">
               <label>Price</label>
               <span style={{ color: "#051832", fontSize: "10" }}>
                 {AddProjectForm.touched.pprice && AddProjectForm.errors.pprice}
@@ -106,14 +105,14 @@ const AddProject = () => {
                 onChange={AddProjectForm.handleChange}
                 value={AddProjectForm.values.pprice}
               />
-            </div>
+            </div> */}
             <div className="form-group">
-              <label>Description</label>
               <span style={{ color: "#051832", fontSize: "10" }}>
                 {AddProjectForm.touched.pdescription &&
                   AddProjectForm.errors.pdescription}
               </span>
               <input
+                placeholder="Description"
                 type="text"
                 className="inp mb-4"
                 id="pdescription"
@@ -123,7 +122,7 @@ const AddProject = () => {
             </div>
             <div className="text-center">
               <button type="submit" className="font-2 submit-button">
-                <p>Signup</p>
+                <p>Add Project</p>
               </button>
             </div>
           </form>

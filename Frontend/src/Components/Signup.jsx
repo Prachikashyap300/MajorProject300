@@ -45,7 +45,9 @@ const Signup = () => {
     <div className="container">
           <div className="card form-card">
             <div className="card-header ">
-              <h3 className="font">Signup</h3>
+              <h4 className="font-3">
+                  Welcome to Exhibix   <br /> Signup to continue
+              </h4>
             </div>
             <div className="card-body">
               {/* step2: handling when submit */}

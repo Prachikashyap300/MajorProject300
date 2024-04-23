@@ -9,6 +9,7 @@ import Navbar from "./Components/Navbar";
 import Contact from "./Components/Contact";
 import AddProject from "./Components/AddProject";
 import ProjectListing from "./Components/ProjectListing";
+import ManageUsers from "./Components/ManageUser";
 const App = () => {
   return (
     <div>
@@ -23,6 +24,8 @@ const App = () => {
             <Route path="/Contact" element={<Contact />} />
             <Route path="/AddProject" element={<AddProject />} />
             <Route path="/ProjectListing" element={<ProjectListing />} />
+            <Route path="/ManageUser" element={<ManageUsers />} />
+
           </Routes>
         </BrowserRouter>
       </SnackbarProvider>

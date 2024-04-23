@@ -33,7 +33,7 @@ const ProductListing = () => {
     <div>
         <header className='bg-body-tertiary'>
             <div className="container py-5">
-                <p className='font text-center fw-bold'>All Products</p>
+                <p className='font-3 text-center text-white'>All Products</p>
                 <input type='text' placeholder='Search Products' className='form-control form-control-lg' />
             </div>
         </header>
