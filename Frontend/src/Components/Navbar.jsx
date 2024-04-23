@@ -42,6 +42,16 @@ const Navbar = () => {
                   Contact
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/AddProject">
+                  Add Project
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/ProjectListing">
+                  Project List
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

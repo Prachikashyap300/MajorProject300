@@ -1,86 +1,30 @@
-
 .card{
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgb(24, 24, 24);
   color: white;
-  width: 800px;
-}
-/* .card-header{
-  /* background-color: white; */
-  /* border-bottom: 2px solid teal; */
- 
-*/
-.button{
-  margin-top: 30px;
-  border-radius: 30px;
-  height: 50px;
-  background-color: #5ee6ebb7;
-  color: black;
+  border: none;
 }
 .inp{
-  height: 50px;
+  width: 500px;
+  margin-bottom: 20px;
+  background: transparent;
   border: none;
-  border-radius: 40px;
-  border-left: 1px solid white;
-  color: black;
-
+  border-bottom: 1px solid white;
+  color: white;
   
 }
 .inp::placeholder{
-  color: gray;
+  color: aliceblue;
 }
-
-.message-box{
-  height: 150px;
+.inp:focus,
+.inp:hover{
+  outline: none;
+  border-bottom: 1px solid green;
 }
-
-.home-bg{
-  background-image: url('../src/assets/Home.png');
-  /* opacity: 0.6; */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 80vh;
-}
-
-.gradient-btn {
-  background: linear-gradient(to right, #4e54c8, #8f94fb); /* Gradient colors */
-  border: none;
-  color: black;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.5s ease; /* Transition for background-color */
-}
-
-.gradient-btn::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background-color: red; /* Initial color for animation */
+.submit-button{
+  padding: 10px;
+  background-color: #000000;
   color: white;
-  transition: width 0.5s ease, height 0.5s ease; /* Transition for width and height */
-  z-index: 0;
-}
-
-.gradient-btn:hover::before {
-  width: 0;
-  height: 0;
-  transition-delay: 0.3s; /* Delay the animation */
-}
-
-.gradient-btn:hover {
-  background-color: #fff; /* Change background color on hover */
-  color: #4e54c8; /* Change text color on hover */
-}
-
-.gradient-btn span {
-  position: relative;
-  z-index: 1;
+  border: 1px solid green;
+  border-radius: 5px;
+  cursor: pointer;
 }

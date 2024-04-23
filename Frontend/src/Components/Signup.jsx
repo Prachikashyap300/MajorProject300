@@ -5,12 +5,8 @@ import { enqueueSnackbar } from "notistack";
 import "../App.css";
 
 const SignupSchema = Yup.object().shape({
-  fname: Yup.string() .required("First Name is requiyellowgreen"),
-  lname: Yup.string() .required("Last Name is requiyellowgreen"),
+  name: Yup.string() .required("First Name is requiyellowgreen"),
   email: Yup.string() .required("Email is requiyellowgreen"),
-  course: Yup.string() .required("Course is requiyellowgreen"),
-  semester: Yup.string() .required("Semester is requiyellowgreen"),
-  college: Yup.string() .required("Course is requiyellowgreen"),
   password: Yup.string() .required("Password is requiyellowgreen"),
   cpassword: Yup.string() .required("Confirm your password"),
 });
@@ -19,12 +15,8 @@ const Signup = () => {
   // step 1: formik initialization
   const signupForm = useFormik({
     initialValues: {
-      fname: "",
-      lname: "",
+      name: "",
       email: "",
-      course: "",
-      semester: "",
-      college: "",
       password: "",
       cpassword: "",
     },
@@ -52,7 +44,7 @@ const Signup = () => {
     <div className="container ">
       <div className="row p-5">
         <div className="col p-2">
-          <div className="card  w-75 d-block mx-auto">
+          <div className="card signupc ">
             <div className="card-header ">
               <h3 className="font">Signup</h3>
             </div>
@@ -60,124 +52,77 @@ const Signup = () => {
               {/* step2: handling when submit */}
               <form onSubmit={signupForm.handleSubmit}>
                 <div className="form-group">
-                  <div className="row">
+                  <div className="row g-5">
                     <div className="col-md-6">
                       <span style={{ color: "yellow", fontSize: "10" }}>
-                        {signupForm.touched.fname && signupForm.errors.fname}
-                      </span>
+                        {signupForm.touched.name && signupForm.errors.name}
+                      </span><br />
                       <input
                         placeholder="First Name"
                         type="text"
-                        className="font-2 form-control mb-3 inp "
-                        id="fname"
+                        className="inp "
+                        id="name"
                         onChange={signupForm.handleChange}
-                        value={signupForm.values.fname}
+                        value={signupForm.values.name}
                       />
                     </div>
-                    <div className="col-md-6">
-                    <span style={{ color: "yellow", fontSize: "10" }}>
-                      {signupForm.touched.lname && signupForm.errors.lname}
-                    </span>
-                    <input
-                      placeholder="Last Name"
-                      type="text"
-                      className="font-2 form-control mb-3  inp "
-                      id="lname"
-                      onChange={signupForm.handleChange}
-                      value={signupForm.values.lname}
-                    />
-                  </div>
+                    
                   </div>
                   
                 </div>
                 <div className="form-group">
                   <span style={{ color: "yellow", fontSize: "10" }}>
                     {signupForm.touched.email && signupForm.errors.email}
-                  </span>
+                  </span><br />
                   <input
                     placeholder="Email"
                     type="text"
-                    className="font-2 form-control mb-3  inp "
+                    className="inp "
                     id="email"
                     onChange={signupForm.handleChange}
                     value={signupForm.values.email}
                   />
                 </div>
-                <div className="form-group">
-                  <span style={{ color: "yellow", fontSize: "10" }}>
-                    {signupForm.touched.course && signupForm.errors.course}
-                  </span>
-                  <input
-                    placeholder="Course"
-                    type="text"
-                    className="font-2 form-control mb-3  inp"
-                    id="course"
-                    onChange={signupForm.handleChange}
-                    value={signupForm.values.course}
-                  />
-                </div>
-                <div className="form-group">
-                  <span style={{ color: "yellow", fontSize: "10" }}>
-                    {signupForm.touched.semester && signupForm.errors.semester}
-                  </span>
-                  <input
-                    placeholder="Semester"
-                    type="text"
-                    className="font-2 form-control mb-3  inp "
-                    id="semester"
-                    onChange={signupForm.handleChange}
-                    value={signupForm.values.semester}
-                  />
-                </div>
-                <div className="form-group">
-                  <span style={{ color: "yellow", fontSize: "10" }}>
-                    {signupForm.touched.college && signupForm.errors.college}
-                  </span>
-                  <input
-                    placeholder="College"
-                    type="text"
-                    className="font-2 form-control mb-3  inp "
-                    id="college"
-                    onChange={signupForm.handleChange}
-                    value={signupForm.values.college}
-                  />
-                </div>
+                
+                
+                
                 <div className="form-group">
                   <div className="row">
                     <div className="col-md-6">
                       <span style={{ color: "yellow", fontSize: "10" }}>
                         {signupForm.touched.password &&
                           signupForm.errors.password}
-                      </span>
+                      </span><br />
                       <input
                         placeholder="Password"
                         type="text"
-                        className="font-2 form-control mb-3  inp "
+                        className="inp "
                         id="password"
                         onChange={signupForm.handleChange}
                         value={signupForm.values.password}
                       />
                     </div>
-                    <div className="col-md-6">
+                    
+                  </div>
+                  <div className="col-md-6">
                       <div className="form-group">
                         <span style={{ color: "yellow", fontSize: "10" }}>
                           {signupForm.touched.cpassword &&
                             signupForm.errors.cpassword}
-                        </span>
+                        </span><br />
                         <input
                           placeholder="Confirm Password"
                           type="text"
-                          className="font-2 form-control mb-3  inp  "
+                          className="inp  "
                           id="cpassword"
                           onChange={signupForm.handleChange}
                           value={signupForm.values.cpassword}
                         />
                       </div>
                     </div>
-                  </div>
                 </div>
 
-                <button type="submit" className=" font-2 w-100 button">
+                <button type="submit" className="font-2 submit-button">
                   Signup
                 </button>
               </form>

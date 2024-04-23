@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Model = require('../Models/Product');
+const Model = require('../Models/Contact');
 
 router.post('/add', (req,res) => {
     console.log(req.body);
@@ -13,7 +13,5 @@ router.post('/add', (req,res) => {
         res.status(500).json(err)
     });
 });
-
-
 
 module.exports = router;

@@ -9,6 +9,8 @@ import Signup from './Components/Signup'
 import Login from './Components/Login'
 import Navbar from './Components/Navbar'
 import Contact from './Components/Contact'
+import AddProject from './Components/AddProject'
+import ProjectListing from './Components/ProjectListing'
 const App = () => {
   return (
     <div>
@@ -21,7 +23,11 @@ const App = () => {
         <Route path='/Signup' element={<Signup/>} />
         <Route path='/Login' element={<Login/>} />
         <Route path='/Contact' element={<Contact/>} />
-        </Routes>
+        <Route path='/AddProject' element={<AddProject/>} />
+        <Route path='/AddProject' element={<AddProject/>} />
+        <Route path='/ProjectListing' element={<ProjectListing/>} />
+
+      </Routes>
       </BrowserRouter>
       </SnackbarProvider>
     </div>

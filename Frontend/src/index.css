@@ -1,6 +1,11 @@
 body{
-    /* background-image: url(../src/assets/darkbg.jpg); */
-    background-color: #151853;
+    /* background-image: url(../src/assets/back.png); */
+    background-color: #c86060 ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+
 }
 
 /* // <uniquifier>: Use a unique and descriptive class name
