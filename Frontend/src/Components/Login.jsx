@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { enqueueSnackbar } from "notistack";
 import "../App.css";
+import { Link } from 'react-router-dom';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().required("Email is requ"),
@@ -39,9 +40,7 @@ const Login = () => {
   });
   return (
     <div className="container">
-      <div className="row mt-5 p-5">
-        <div className="col p-2">
-          <div className="card ">
+          <div className="card form-card">
             <div className="card-header">
               <h2 className="font">
                 Welcome to IdeaHub <br /> Login to continue
@@ -50,7 +49,7 @@ const Login = () => {
             <div className="card-body">
               <form onSubmit={loginForm.handleSubmit}>
                 <div className="from-group">
-                  <span style={{ color: "yellow", fontSize: "10" }}>
+                  <span style={{ color: "#051832", fontSize: "10" }}>
                     {loginForm.
                     touched.email && loginForm.errors.email}
                   </span><br />
@@ -66,7 +65,7 @@ const Login = () => {
 
                 </div>
                 <div className="from-group">
-                  <span style={{ color: "yellow", fontSize: "10" }}>
+                  <span style={{ color: "#051832", fontSize: "10" }}>
                     {loginForm.touched.password && loginForm.errors.password}
                   </span><br />
                   <input
@@ -78,15 +77,16 @@ const Login = () => {
                     className="inp"
                   />
                 </div>
-                  <button type="submit" className="submit-button font-2 ">
-                  Login
-                </button>
+                <div className="text-center">
+                  <button type="submit" className="font-2 submit-button">
+                    <p>Signup</p>
+                  </button>
+                  <p className="mt-5 text-center">Dont have an account? <Link className="links" to="/Signup">Signup</Link></p>
+                </div>
               </form>
             </div>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 

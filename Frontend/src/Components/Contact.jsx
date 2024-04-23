@@ -2,8 +2,9 @@ import React from "react";
 import im from "../assets/bg.jpg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { enqueueSnackbar } from "notistack";
+import { enqueueSnackbar } from 'notistack';
 import "../App.css";
+import { Link } from 'react-router-dom';
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
@@ -16,7 +17,7 @@ const Contact = () => {
     initialValues: {
       name: "",
       email: "",
-      message: ""
+      message: "",
     },
     onSubmit: async (values, action) => {
       console.log(values);
@@ -44,7 +45,7 @@ const Contact = () => {
       <h2 className=" text-center m-5 font text-white ">
         Feel free to contact 
       </h2>
-      <div className="card">
+      <div className="card form-card">
         <div className="card-body">
           <div className="row g-5">
             <div className="col-lg-4 p-3 ">
@@ -57,9 +58,9 @@ const Contact = () => {
             </div>
             <div className="col-lg-8">
               <form onSubmit={contactForm.handleSubmit}>
-                <div className="from-group">
-                  <span style={{ color: "yellow", fontSize: "10" }}>
-                    {signupForm.touched.name && signupForm.errors.name}
+                <div className="form-group">
+                  <span style={{ color: "#051832", fontSize: "10" }}>
+                    {contactForm.touched.name && contactForm.errors.name}
                   </span>
                   <br />
                   <input
@@ -71,9 +72,9 @@ const Contact = () => {
                     value={contactForm.values.name}
                   />
                 </div>
-                <div className="from-group">
-                <span style={{ color: "yellow", fontSize: "10" }}>
-                    {signupForm.touched.email && signupForm.errors.email}
+                <div className="form-group">
+                <span style={{ color: "#051832", fontSize: "10" }}>
+                    {contactForm.touched.email && contactForm.errors.email}
                   </span>
                   <br />
                   <input 
@@ -82,12 +83,12 @@ const Contact = () => {
                     type="email"
                     className=" inp"
                     onChange={contactForm.handleChange}
-                    value={contactForm.value.email}
+                    value={contactForm.values.email}
                   />
                 </div>
-                <div className="from-group">
-                <span style={{ color: "yellow", fontSize: "10" }}>
-                    {signupForm.touched.message && signupForm.errors.message}
+                <div className="form-group">
+                <span style={{ color: "#051832", fontSize: "10" }}>
+                    {contactForm.touched.message && contactForm.errors.message}
                   </span>
                   <br />
                   <input
@@ -99,10 +100,13 @@ const Contact = () => {
                     value={contactForm.values.message}
                   />
                 </div>
+                
+                <div className="text-center">
+                  <button type="submit" className="font-2 submit-button">
+                    <p>Signup</p>
+                  </button>
+                </div>
 
-                <button type="submit" className="font-2 submit-button">
-                  Send Message
-                </button>
               </form>
             </div>
           </div>

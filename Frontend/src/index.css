@@ -1,11 +1,13 @@
 body{
-    /* background-image: url(../src/assets/back.png); */
-    background-color: #c86060 ;
+    background-image: url(../src/assets/back3.png);
+    background-color: black ;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
-
+    color: white;
+    font-size: 34px;
+    text-decoration: none;
 }
 
 /* // <uniquifier>: Use a unique and descriptive class name
@@ -33,4 +35,4 @@ body{
     font-weight: 500;
     /* font-style: normal; */
     font-size: 20px;
-  }
+}

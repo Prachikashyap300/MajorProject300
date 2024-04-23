@@ -2,6 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { enqueueSnackbar } from "notistack";
+import { Link } from 'react-router-dom';
 import "../App.css";
 
 const SignupSchema = Yup.object().shape({
@@ -41,10 +42,8 @@ const Signup = () => {
     validationSchema: SignupSchema,
   });
   return (
-    <div className="container ">
-      <div className="row p-5">
-        <div className="col p-2">
-          <div className="card signupc ">
+    <div className="container">
+          <div className="card form-card">
             <div className="card-header ">
               <h3 className="font">Signup</h3>
             </div>
@@ -52,26 +51,20 @@ const Signup = () => {
               {/* step2: handling when submit */}
               <form onSubmit={signupForm.handleSubmit}>
                 <div className="form-group">
-                  <div className="row g-5">
-                    <div className="col-md-6">
-                      <span style={{ color: "yellow", fontSize: "10" }}>
+                  <span style={{ color: "#051832", fontSize: "10" }}>
                         {signupForm.touched.name && signupForm.errors.name}
                       </span><br />
                       <input
-                        placeholder="First Name"
+                        placeholder="Name"
                         type="text"
                         className="inp "
                         id="name"
                         onChange={signupForm.handleChange}
                         value={signupForm.values.name}
                       />
-                    </div>
-                    
-                  </div>
-                  
                 </div>
                 <div className="form-group">
-                  <span style={{ color: "yellow", fontSize: "10" }}>
+                  <span style={{ color: "#051832", fontSize: "10" }}>
                     {signupForm.touched.email && signupForm.errors.email}
                   </span><br />
                   <input
@@ -83,13 +76,8 @@ const Signup = () => {
                     value={signupForm.values.email}
                   />
                 </div>
-                
-                
-                
                 <div className="form-group">
-                  <div className="row">
-                    <div className="col-md-6">
-                      <span style={{ color: "yellow", fontSize: "10" }}>
+                      <span style={{ color: "#051832", fontSize: "10" }}>
                         {signupForm.touched.password &&
                           signupForm.errors.password}
                       </span><br />
@@ -101,36 +89,34 @@ const Signup = () => {
                         onChange={signupForm.handleChange}
                         value={signupForm.values.password}
                       />
-                    </div>
-                    
-                  </div>
-                  <div className="col-md-6">
-                      <div className="form-group">
-                        <span style={{ color: "yellow", fontSize: "10" }}>
-                          {signupForm.touched.cpassword &&
-                            signupForm.errors.cpassword}
-                        </span><br />
-                        <input
-                          placeholder="Confirm Password"
-                          type="text"
-                          className="inp  "
-                          id="cpassword"
-                          onChange={signupForm.handleChange}
-                          value={signupForm.values.cpassword}
-                        />
-                      </div>
-                    </div>
+                </div>               
+                <div className="form-group">
+                  <span style={{ color: "#051832", fontSize: "10" }}>
+                    {signupForm.touched.cpassword &&
+                      signupForm.errors.cpassword}
+                  </span><br />
+                  <input
+                    placeholder="Confirm Password"
+                    type="text"
+                    className="inp"
+                    id="cpassword"
+                    onChange={signupForm.handleChange}
+                    value={signupForm.values.cpassword}
+                  />
                 </div>
-
-                <button type="submit" className="font-2 submit-button">
-                  Signup
-                </button>
+                <div className="text-center">
+                  <button type="submit" className="font-2 submit-button">
+                    <p>Signup</p>
+                  </button>
+                  <p className="mt-5 text-center">Already have an account? <Link className='links' to="/Login">Login</Link></p>
+                </div>
+                
               </form>
             </div>
           </div>
-        </div>
-      </div>
     </div>
+    
+  
   );
 };
 

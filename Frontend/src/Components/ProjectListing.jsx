@@ -33,8 +33,8 @@ const ProductListing = () => {
     <div>
         <header className='bg-body-tertiary'>
             <div className="container py-5">
-                <p className='text-center fw-bold'>All Products</p>
-                <input type='text' placeholder='Search Products' className='form-control w-75 m-auto' />
+                <p className='font text-center fw-bold'>All Products</p>
+                <input type='text' placeholder='Search Products' className='form-control form-control-lg' />
             </div>
         </header>
 
