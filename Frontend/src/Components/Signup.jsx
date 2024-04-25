@@ -2,7 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { enqueueSnackbar } from "notistack";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "../App.css";
 
 const SignupSchema = Yup.object().shape({
@@ -13,6 +13,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 const Signup = () => {
+  const navigate = useNavigate();
   // step 1: formik initialization
   const signupForm = useFormik({
     initialValues: {
@@ -35,6 +36,7 @@ const Signup = () => {
 
       if (res.status === 200) {
         enqueueSnackbar("Signup successful", { variant: "success" });
+        navigate("/Login")
       } else {
         enqueueSnackbar("Signup failed", { variant: "error" });
       }

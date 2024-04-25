@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { enqueueSnackbar } from "notistack";
 import "../App.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useUserContext from "../UserContext";
 
 const LoginSchema = Yup.object().shape({
@@ -14,6 +14,7 @@ const LoginSchema = Yup.object().shape({
 
 const Login = () => {
 
+  const navigate = useNavigate();
   //for logout
 
   const {setLoggedIn} = useUserContext;
@@ -41,6 +42,7 @@ const Login = () => {
 
       if (res.status === 200) {
         enqueueSnackbar("Login successful", { variant: "success" });
+        navigate("/")
         setLoggedIn(true);
 
         const data = await res.json();

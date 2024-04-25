@@ -11,6 +11,8 @@ import AddProject from "./Components/AddProject";
 import ProjectListing from "./Components/ProjectListing";
 import ManageUsers from "./Components/ManageUser";
 import { UserProvider } from "./UserContext";
+import Admin from "./Components/admin";
+import ManageProject from "./Components/admin/ManageProject";
 const App = () => {
   return (
     <div>
@@ -27,6 +29,10 @@ const App = () => {
               <Route path="/AddProject" element={<AddProject />} />
               <Route path="/ProjectListing" element={<ProjectListing />} />
               <Route path="/ManageUser" element={<ManageUsers />} />
+             <Route path="/admin" element={<Admin/>}>
+               <Route path="/manageproject" element={<ManageProject/>}/>
+             </Route>
+
             </Routes>
           </UserProvider>
         </BrowserRouter>
