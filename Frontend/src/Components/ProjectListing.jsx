@@ -4,10 +4,10 @@ const ProductListing = () => {
     const [products, setProducts] = useState([])
 
     const fetchProducts = async () => {
-        const res = await fetch('http://localhost:4000/P roduct/getall')
+        const res = await fetch('http://localhost:4000/Product/getall')
         console.log(res.status)
         if (res.status === 200){
-            const data = await res.json();
+            const data = await res.json();  
             console.log(data)
             setProducts(data)
         }
