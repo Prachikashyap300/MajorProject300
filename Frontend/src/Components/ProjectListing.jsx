@@ -4,11 +4,7 @@ const ProductListing = () => {
     const [products, setProducts] = useState([])
 
     const fetchProducts = async () => {
-<<<<<<< HEAD
-        const res = await fetch('http://localhost:4000/Product/getall')
-=======
         const res = await fetch('http://localhost:4000/Project/getall')
->>>>>>> cc4213420ce5034a72a20340d1e13444df32cb63
         console.log(res.status)
         if (res.status === 200){
             const data = await res.json();  
