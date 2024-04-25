@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 .form-card{
   margin-left: 11%;
   margin-top: 5%;

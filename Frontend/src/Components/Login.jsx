@@ -29,7 +29,7 @@ const Login = () => {
     },
     onSubmit: async (values, action) => {
       console.log(values);
-      const res = await fetch("http://localhost:4000/user/add", {
+      const res = await fetch("http://localhost:4000/user/authenticate", {
         method: "POST",
         body: JSON.stringify(values),
         headers: {
