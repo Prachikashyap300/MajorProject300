@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 const AddProjectSchema = Yup.object().shape({
   pname: Yup.string().required("Name is required"),
-  // pcateogory: Yup.string().required("pcateogory is required"),
-  // pprice: Yup.string().required("Price is required"),
+  pcateogory: Yup.string().required("pcateogory is required"),
+  pprice: Yup.string().required("Price is required"),
   pdescription: Yup.string().required("Description is required"),
 });
 
@@ -33,9 +33,9 @@ const AddProject = () => {
       action.resetForm();
 
       if (res.status === 200) {
-        enqueueSnackbar("Project Added", { variant: "success" });
+        enqueueSnackbar("Application submitted wait for response", { variant: "success" });
       } else {
-        enqueueSnackbar("Signup failed", { variant: "error" });
+        enqueueSnackbar("Application not submitted", { variant: "error" });
       }
     },
     validationSchema: AddProjectSchema,
@@ -67,7 +67,7 @@ const AddProject = () => {
           {/* step2: handling when submit */}
           <form onSubmit={AddProjectForm.handleSubmit}>
             <div className="form-group">
-              <span style={{ color: "#051832", fontSize: "10" }}>
+              <span style={{ color: "red", fontSize: "10" }}>
                 {AddProjectForm.touched.pname && AddProjectForm.errors.pname}
               </span>
               <input
@@ -80,7 +80,7 @@ const AddProject = () => {
               />
             </div>
             <div className="form-group">
-              <span style={{ color: "#051832", fontSize: "10" }}>
+              <span style={{ color: "red", fontSize: "10" }}>
                 {AddProjectForm.touched.pcateogory &&
                   AddProjectForm.errors.pcateogory}
               </span>
@@ -94,7 +94,7 @@ const AddProject = () => {
               />
             </div> 
             <div className="form-group">
-              <span style={{ color: "#051832", fontSize: "10" }}>
+              <span style={{ color: "red", fontSize: "10" }}>
                 {AddProjectForm.touched.pprice && AddProjectForm.errors.pprice}
               </span>
               <input
@@ -107,7 +107,7 @@ const AddProject = () => {
               />
             </div>
             <div className="form-group">
-              <span style={{ color: "#051832", fontSize: "10" }}>
+              <span style={{ color: "red", fontSize: "10" }}>
                 {AddProjectForm.touched.pdescription &&
                   AddProjectForm.errors.pdescription}
               </span>
