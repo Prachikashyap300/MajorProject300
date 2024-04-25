@@ -22,7 +22,7 @@ const AddProject = () => {
     },
     onSubmit: async (values, action) => {
       console.log(values);
-      const res = await fetch("http://localhost:4 000/user/add", {
+      const res = await fetch("http://localhost:4000/project/add", {
         method: "POST",
         body: JSON.stringify(values),
         headers: {
@@ -33,7 +33,7 @@ const AddProject = () => {
       action.resetForm();
 
       if (res.status === 200) {
-        enqueueSnackbar("Signup successful", { variant: "success" });
+        enqueueSnackbar("Project Added", { variant: "success" });
       } else {
         enqueueSnackbar("Signup failed", { variant: "error" });
       }
@@ -79,33 +79,33 @@ const AddProject = () => {
                 value={AddProjectForm.values.pname}
               />
             </div>
-            {/* <div className="form-group">
-              <label>Cateogory</label>
+            <div className="form-group">
               <span style={{ color: "#051832", fontSize: "10" }}>
                 {AddProjectForm.touched.pcateogory &&
                   AddProjectForm.errors.pcateogory}
               </span>
               <input
+                placeholder="Cateogory"
                 type="text"
                 className="inp mb-4"
                 id="pcateogory"
                 onChange={AddProjectForm.handleChange}
                 value={AddProjectForm.values.pcateogory}
               />
-            </div> */}
-            {/* <div className="form-group">
-              <label>Price</label>
+            </div> 
+            <div className="form-group">
               <span style={{ color: "#051832", fontSize: "10" }}>
                 {AddProjectForm.touched.pprice && AddProjectForm.errors.pprice}
               </span>
               <input
+                placeholder="Price"
                 type="text"
                 className="inp mb-4"
                 id="pprice"
                 onChange={AddProjectForm.handleChange}
                 value={AddProjectForm.values.pprice}
               />
-            </div> */}
+            </div>
             <div className="form-group">
               <span style={{ color: "#051832", fontSize: "10" }}>
                 {AddProjectForm.touched.pdescription &&

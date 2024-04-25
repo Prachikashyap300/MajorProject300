@@ -10,23 +10,25 @@ import Contact from "./Components/Contact";
 import AddProject from "./Components/AddProject";
 import ProjectListing from "./Components/ProjectListing";
 import ManageUsers from "./Components/ManageUser";
+import { UserProvider } from "./UserContext";
 const App = () => {
   return (
     <div>
       <SnackbarProvider>
         <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/Signup" element={<Signup />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Contact" element={<Contact />} />
-            <Route path="/AddProject" element={<AddProject />} />
-            <Route path="/ProjectListing" element={<ProjectListing />} />
-            <Route path="/ManageUser" element={<ManageUsers />} />
-
-          </Routes>
+          <UserProvider>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Home" element={<Home />} />
+              <Route path="/Signup" element={<Signup />} />
+              <Route path="/Login" element={<Login />} />
+              <Route path="/Contact" element={<Contact />} />
+              <Route path="/AddProject" element={<AddProject />} />
+              <Route path="/ProjectListing" element={<ProjectListing />} />
+              <Route path="/ManageUser" element={<ManageUsers />} />
+            </Routes>
+          </UserProvider>
         </BrowserRouter>
       </SnackbarProvider>
     </div>

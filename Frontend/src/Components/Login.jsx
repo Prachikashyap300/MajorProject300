@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import { enqueueSnackbar } from "notistack";
 import "../App.css";
 import { Link } from 'react-router-dom';
+import useUserContext from "../UserContext";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().required("Email is required"),
@@ -12,6 +13,14 @@ const LoginSchema = Yup.object().shape({
 });
 
 const Login = () => {
+
+  //for logout
+
+  const {setLoggedIn} = useUserContext;
+
+  
+
+
   // step 1: formik initialization
   const loginForm = useFormik({
     initialValues: {
@@ -32,6 +41,13 @@ const Login = () => {
 
       if (res.status === 200) {
         enqueueSnackbar("Login successful", { variant: "success" });
+        setLoggedIn(true);
+
+        const data = await res.json();
+        console.log(data);
+        //to save user data ini session , inbuilt api session storage
+        sessionStorage.setItem('user', JSON.stringify(data));
+
       } else {
         enqueueSnackbar("Login failed", { variant: "error" });
       }
