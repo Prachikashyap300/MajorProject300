@@ -4,7 +4,11 @@ const ProductListing = () => {
     const [products, setProducts] = useState([])
 
     const fetchProducts = async () => {
+<<<<<<< HEAD
         const res = await fetch('http://localhost:4000/Product/getall')
+=======
+        const res = await fetch('http://localhost:4000/Project/getall')
+>>>>>>> cc4213420ce5034a72a20340d1e13444df32cb63
         console.log(res.status)
         if (res.status === 200){
             const data = await res.json();  
@@ -33,8 +37,8 @@ const ProductListing = () => {
     <div>
         <header className='bg-body-tertiary'>
             <div className="container py-5">
-                <p className='font-3 text-center text-white'>All Products</p>
-                <input type='text' placeholder='Search Products' className='form-control form-control-lg' />
+                <p className='font-3 text-center text-white'>All Projects</p>
+                <input type='text' placeholder='Search Projects' className='form-control form-control-lg' />
             </div>
         </header>
 

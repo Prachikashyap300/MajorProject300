@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 .form-card{
   margin-left: 11%;
   margin-top: 5%;
@@ -66,10 +71,10 @@
   border: none;  
 }
 .nav-button-active{
-  background-color: transparent;
+  background-color: #8e22ac;
   color: white;
   margin-right: 5px;
-  border: 4px solid transparent;
+  border: 4px solid #8e22ac ;
   border-radius: 50px;
   
 }
