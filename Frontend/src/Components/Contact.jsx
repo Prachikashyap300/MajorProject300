@@ -86,7 +86,7 @@ const Contact = () => {
                   <br />
                   <input
                     id="messgae"
-                    placeholder="mess"
+                    placeholder="meesss"
                     type="text-box"
                     className=" inp  message-box "
                     onChange={contactForm.handleChange}
