@@ -4,7 +4,7 @@ import { enqueueSnackbar } from 'notistack'
 
 const Home = () => {
   const handleButtonClick = () => {
-    enqueueSnackbar('su !')
+    enqueueSnackbar('success !')
   }
   return (
     <div className="container-fluid">
