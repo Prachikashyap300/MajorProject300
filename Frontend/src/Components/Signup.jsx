@@ -47,7 +47,7 @@ const Signup = () => {
     <div className="container">
           <div className="card form-card">
             <div className="card-header ">
-              <h4 className="font-3">
+              <h4 className="">
                   Welcome to Exhibix   <br /> Signup to continue
               </h4>
             </div>
@@ -109,7 +109,7 @@ const Signup = () => {
                   />
                 </div>
                 <div className="text-center">
-                  <button type="submit" className="font-2 submit-button">
+                  <button type="submit" className="  ">
                     <p>Signup</p>
                   </button>
                   <p className="mt-5 text-center">Already have an account? <Link className='links' to="/Login">Login</Link></p>

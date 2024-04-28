@@ -60,7 +60,7 @@ const Login = () => {
     <div className="container">
           <div className="card form-card">
             <div className="card-header">
-              <h2 className="font-3">
+              <h2 className="">
                 Welcome to Exhibix   <br /> Login to continue
               </h2>
             </div>
@@ -96,7 +96,7 @@ const Login = () => {
                   />
                 </div>
                 <div className="text-center">
-                  <button type="submit" className="font-2 submit-button">
+                  <button type="submit" className="">
                     <p>Login</p>
                   </button>
                   <p className="mt-5 text-center">Dont have an account? <Link className="links" to="/Signup">Signup</Link></p>

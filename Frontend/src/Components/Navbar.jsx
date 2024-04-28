@@ -34,10 +34,10 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark nav-bg">
+      <nav className="navbar  navbar-dark nav-bg">
         <div className="container-fluid">
           
-          <Link className="navbar-brand font" to="/Home">
+          <Link className="navbar-brand"   to="/Home">
             Exhibix
           </Link>
           

@@ -3,11 +3,12 @@
 
 .form-card{
   margin-left: 11%;
-  margin-top: 5%;
+  /* margin-top: 5%; */
 }
 .card{
   background-color: white;
-  width: 75%;
+  width: 60%;
+  margin-left: 20%;
   padding-left: 50px;
   padding-right: 50px;
   color: black;
@@ -21,9 +22,8 @@
 }
 .inp{
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   border-radius: 25px;
-  font-size: 30px;
   padding: 10px;
   padding-left: 50px;
 }
@@ -46,7 +46,7 @@
   width: 250px; 
 }
 .submit-button p{
-  font-size: 30px;
+  /* font-size: 30px; */
   padding-top: 11px;
   padding-bottom: 5px;
   margin-bottom: 10px;
