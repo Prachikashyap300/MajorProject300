@@ -5,7 +5,7 @@ import { SnackbarProvider } from "notistack";
 import Home from "./Components/Home";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
-import Navbar from "./Components/Navbar";
+// import Navbar from "./Components/Navbar";
 import Contact from "./Components/Contact";
 import AddProject from "./Components/AddProject";
 import ProjectListing from "./Components/ProjectListing";
@@ -13,13 +13,15 @@ import ManageUsers from "./Components/ManageUser";
 import { UserProvider } from "./UserContext";
 import Admin from "./Components/admin";
 import ManageProject from "./Components/admin/ManageProject";
+import NavbarNew from "./Components/NavbarNew";
 const App = () => {
   return (
     <div>
       <SnackbarProvider>
         <BrowserRouter>
           <UserProvider>
-            <Navbar />
+            {/* <Navbar /> */}
+            <NavbarNew/>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/Home" element={<Home />} />
