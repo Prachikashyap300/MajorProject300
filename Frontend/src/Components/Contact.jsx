@@ -41,7 +41,7 @@ const Contact = () => {
   });
 
   return (
-    <div className="container">
+    <div className="container w-75 p-5">
       <div className="row">
         <div className="col-lg-5">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia laborum inventore enim. Nostrum, debitis, iure natus accusantium nulla vero sed asperiores autem inventore corrupti dolore animi quibusdam blanditiis, expedita fuga.</p>

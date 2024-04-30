@@ -60,7 +60,7 @@ const AddProject = () => {
   };
 
   return (
-    <div className="container w-50">
+    <div className="container w-50 p-5">
       <div className="row">
         <div className="col-lg-0"></div>
         <div className="col-lg-12">

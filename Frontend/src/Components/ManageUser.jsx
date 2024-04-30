@@ -46,7 +46,7 @@ const ManageUser = () => {
         </header>
 
         <div className="container mt-5 text-white">
-            <table className="table table-dark">
+            <table className="table table-dark table-striped">
                 <thead>
                     <tr className='text-white'>
                         <th>Name</th>
