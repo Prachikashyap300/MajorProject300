@@ -33,7 +33,9 @@ const Project = () => {
       action.resetForm();
 
       if (res.status === 200) {
-        enqueueSnackbar("Application submitted wait for response", { variant: "success" });
+        enqueueSnackbar("Application submitted wait for response", {
+          variant: "success",
+        });
       } else {
         enqueueSnackbar("Application not submitted", { variant: "error" });
       }
@@ -58,46 +60,61 @@ const Project = () => {
   };
 
   return (
-    <div className="container w-50  p-2">
-    <div className="card">
-      <div className="card-header bg-primary text-light">
-        <h6>Project Details</h6>
-      </div>
-      <div className="card-body">
-        <form className="" onSubmit={AddProjectForm.handleSubmit}>
-          <div className="">
-          <span style={{ color: "red", fontSize: "8px" }}> 
-            {AddProjectForm.touched.ptitle && AddProjectForm.errors.ptitle}
-          </span><br />
-            <input
-              placeholder="Title"
-              type="text"
-              className="form-control form-control-sm"
-              id="ptitle"
-              onChange={AddProjectForm.handleChange}
-              value={AddProjectForm.values.ptitle}
-            />
+    <div className="container w-50">
+      <div className="row">
+        <div className="col-lg-0">
+        </div>
+        <div className="col-lg-12">
+          <div className="myForm">
+            <form className="" onSubmit={AddProjectForm.handleSubmit}>
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className="">
+                    <span style={{ color: "red", fontSize: "8px" }}>
+                      {AddProjectForm.touched.ptitle &&
+                        AddProjectForm.errors.ptitle}
+                    </span>
+                    <br />
+                    <input
+                      placeholder="Title"
+                      type="text"
+                      className="input"
+                      id="ptitle"
+                      onChange={AddProjectForm.handleChange}
+                      value={AddProjectForm.values.ptitle}
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-12">
+                  <div className="mb-3">
+                    <span style={{ color: "red", fontSize: "8px" }}>
+                      {AddProjectForm.touched.pdescription &&
+                        AddProjectForm.errors.pdescription}
+                    </span>
+                    <br />
+                    <textarea
+                      placeholder="Description"
+                      className="input"
+                      rows={5}
+                      id="pdescription"
+                      onChange={AddProjectForm.handleChange}
+                      value={AddProjectForm.values.pdescription}
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-12">
+                  <div className="">
+                    <button type="submit" className="submit-button">
+                      Signup
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
-          <div className="mb-3">
-          <span style={{ color: "red", fontSize: "8px" }}> 
-            {AddProjectForm.touched.pdescription && AddProjectForm.errors.pdescription}
-          </span><br />
-            <textarea
-              placeholder="Description"
-              className="form-control"
-              rows={3}
-              id="pdescription"
-              onChange={AddProjectForm.handleChange}
-              value={AddProjectForm.values.pdescription}
-            />
-          </div>
-          <button type="submit" className="btn btn-sm btn-primary">
-            Add Project
-          </button>
-        </form>
+        </div>
       </div>
     </div>
-  </div>
   );
 };
 

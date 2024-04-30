@@ -1,12 +1,11 @@
 import { Formik } from "formik";
-import { enqueueSnackbar } from "notistack";
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 // import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Update = () => {
   const { id } = useParams();
-  const [productData, setProductData] = useState(null);
+  const [projectData, setProductData] = useState(null);
   const [selFile, setSelFile] = useState("");
 
   const navigate = useNavigate();
@@ -16,29 +15,30 @@ const Update = () => {
     const data = await res.json();
 
     console.log(data);
-    setProductData(data);
+    setProjecttData(data);
   };
 
   useEffect(() => {
-    fetchproductData();
+    fetchprojectData();
   }, []);
 
   const submitForm = async (values) => {
     console.log(values);
     values.simage = selFile;
-    const res = await fetch('http://localhost:4000/project/update/' + id, {
-      method: 'PUT',
+    const res = await fetch("http://localhost:4000/project/update/" + id, {
+      method: "PUT",
       body: JSON.stringify(values),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     });
 
     console.log(res.status);
 
     if (res.status === 200) {
-    enqueueSnackbar("Updated successfully")
-      navigate('/Project');
+      // toast("Updated successfully")
+      enqueueSnackbar("Updated successfully", { variant: "success" });
+      navigate("/ProductListing");
     }
   };
 
@@ -64,70 +64,42 @@ const Update = () => {
         <div className="card">
           <div className="card-body">
             <h3 className="text-center my-5">Update Service</h3>
-            {productData !== null ? (
+            {projectData !== null ? (
               <Formik initialValues={projectData} onSubmit={submitForm}>
-
-                {(addProjectForm) => (
-
-                  <form onSubmit={addProductForm.handleSubmit}>
-                    <label>Product Name</label>
+                {(AddProjectForm) => (
+                  <form onSubmit={AddProjectForm.handleSubmit}>
+                    <label>Project Title</label>
 
                     <span
                       style={{ color: "red", fontSize: 10, marginLeft: 10 }}
                     >
-                      {addProductForm.errors.pname}
+                      {AddProjectForm.errors.ptitle}
                     </span>
                     <input
-                      id="pname"
-                      onChange={addProductForm.handleChange}
-                      value={addProductForm.values.pname}
+                      id="ptitle"
+                      onChange={AddProjectForm.handleChange}
+                      value={AddProjectForm.values.ptitle}
                       type="text"
                       className="form-control mb-4"
                     />
 
-                    <label>Product Category</label>
-                    <span
-                      style={{ color: "red", fontSize: 10, marginLeft: 10 }}
-                    >
-                      {addProductForm.errors.pcategory}
-                    </span>
+                    <label>Project Description</label>
                     <input
-                      id="pcategory"
-                      onChange={addProductForm.handleChange}
-                      value={addProductForm.values.pcategory}
-                      type="text"
-                      className="form-control mb-4"
-                    />
-                      <label>Product Price</label>
-                    <span
-                      style={{ color: "red", fontSize: 10, marginLeft: 10 }}
-                    >
-                      {addProductForm.errors.pprice}
-                    </span>
-                    <input
-                      id="pprice"
-                      onChange={addProductForm.handleChange}
-                      value={addProductForm.values.pprice}
+                      id="pdescription"
+                      onChange={AddProjectForm.handleChange}
+                      value={AddProjectForm.values.pdescription}
                       type="text"
                       className="form-control mb-4"
                     />
 
-                    <label>Product Description</label>
-                    <input
-                      id="pdetail"
-                      onChange={addProductForm.handleChange}
-                      value={addProductForm.values.pdetail}
-                      type="text"
-                      className="form-control mb-4"
-                    />
-
-                    <label>Upload Image</label>
+                    {/* <label>Upload Image</label>
                     <input
                       type="file"
                       id="pimage"
                       className="form-control mb-4"
                       placeholder="Upload Image"
-                      onChange={uploadFile} />
+                      onChange={uploadFile}
+                    /> */}
 
                     <button type="submit" className="btn btn-primary w-100">
                       Submit

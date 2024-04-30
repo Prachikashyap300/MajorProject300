@@ -3,7 +3,7 @@ import React,{useState, useEffect} from 'react'
 const ManageProject = () => {
     const [Data, setData] = useState([])
 
-    const fetchUserData = async () => {
+    const fetchProjectData = async () => {
         const res = await fetch('http://localhost:4000/project/getall')
         console.log(res.status)
         if (res.status === 200){
@@ -13,26 +13,26 @@ const ManageProject = () => {
         }
     }
     useEffect(() => {
-        fetchUserData()
+        fetchProjectData()
     }, [])
 
-    const deleteProduct = async (id) => {
+    const deleteProject = async (id) => {
         console.log(id);
         const res = await fetch("http://localhost:4000/project/delete/" + id, {
             method: "DELETE",
         });
         if (res.status === 200) {
-            fetchUserData();
+            fetchProjectData();
         }
     }
 
-    const displayUser = () =>{
+    const displayProject = () =>{
         return Data.map((user) => (
             <tr>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
+                <td>{user.ptitle}</td>
+                <td>{user.pdescription}</td>
                 <td>
-                    <button onClick = {() => { deleteProduct(user._id)}} className="btn btn-danger">Delete</button>
+                    <button onClick = {() => { deleteProject(project._id)}} className="btn btn-danger">Delete</button>
                 </td>
             </tr>
         ))
@@ -49,13 +49,13 @@ const ManageProject = () => {
             <table className="table table-dark">
                 <thead>
                     <tr className='text-white'>
-                        <th>Name</th>
-                        <th>Email</th>
+                        <th>Title</th>
+                        <th>Description</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {displayUser()}
+                    {displayProject()}
                 </tbody>
             </table>
         </div>

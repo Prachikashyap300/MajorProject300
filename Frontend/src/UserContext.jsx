@@ -26,4 +26,4 @@ export const UserProvider = ({ children }) => {
 
 const useUserContext = () => useContext(UserContext);
 
-export default useUserContext;
+export default useUserContext;

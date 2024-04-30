@@ -45,7 +45,7 @@ const Signup = () => {
   });
   return (
     <div className="container w-50">
-      <div className="row">7y6-
+      <div className="row">
         <div className="col-lg-0">
         </div>
         <div className="col-lg-12">

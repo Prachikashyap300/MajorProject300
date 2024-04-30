@@ -1,9 +1,9 @@
 import React,{useState, useEffect} from 'react'
 
-const ManageUsers = () => {
+const ManageUser = () => {
     const [Data, setData] = useState([])
 
-    const fetchUserData = async () => {
+    const fetchProjectData = async () => {
         const res = await fetch('http://localhost:4000/user/getall')
         console.log(res.status)
         if (res.status === 200){
@@ -13,26 +13,26 @@ const ManageUsers = () => {
         }
     }
     useEffect(() => {
-        fetchUserData()
+        fetchProjectData()
     }, [])
 
-    const deleteProduct = async (id) => {
+    const deleteProject = async (id) => {
         console.log(id);
         const res = await fetch("http://localhost:4000/user/delete/" + id, {
             method: "DELETE",
         });
         if (res.status === 200) {
-            fetchUserData();
+            fetchProjectData();
         }
     }
 
-    const displayUser = () =>{
+    const displayProject = () =>{
         return Data.map((user) => (
             <tr>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>
-                    <button onClick = {() => { deleteProduct(user._id)}} className="btn btn-danger">Delete</button>
+                    <button onClick = {() => { deleteProject(user._id)}} className="btn btn-danger">Delete</button>
                 </td>
             </tr>
         ))
@@ -41,21 +41,21 @@ const ManageUsers = () => {
     <div>
         <header className='text-center mt-5'>
             <div className="container">
-                <h1 className='font-3 text-white'>Manage User</h1>
+                <h1 className='font-3 text-white'>Manage Project</h1>
             </div>
         </header>
 
-        <div className="container mt-5">
+        <div className="container mt-5 text-white">
             <table className="table table-dark">
                 <thead>
-                    <tr>
+                    <tr className='text-white'>
                         <th>Name</th>
                         <th>Email</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {displayUser()}
+                    {displayProject()}
                 </tbody>
             </table>
         </div>
@@ -63,4 +63,4 @@ const ManageUsers = () => {
   )
 }
 
-export default ManageUsers
+export default ManageUser
