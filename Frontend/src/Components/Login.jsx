@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { enqueueSnackbar } from "notistack";
 import "../App.css";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import useUserContext from "../UserContext";
 
 const LoginSchema = Yup.object().shape({
@@ -13,14 +13,10 @@ const LoginSchema = Yup.object().shape({
 });
 
 const Login = () => {
-
   const navigate = useNavigate();
   //for logout
 
-  const {setLoggedIn} = useUserContext;
-
-  
-
+  const { setLoggedIn } = useUserContext;
 
   // step 1: formik initialization
   const loginForm = useFormik({
@@ -42,14 +38,13 @@ const Login = () => {
 
       if (res.status === 200) {
         enqueueSnackbar("Login successful", { variant: "success" });
-        navigate("/")
+        navigate("/");
         setLoggedIn(true);
 
         const data = await res.json();
         console.log(data);
         //to save user data ini session , inbuilt api session storage
-        sessionStorage.setItem('user', JSON.stringify(data));
-
+        sessionStorage.setItem("user", JSON.stringify(data));
       } else {
         enqueueSnackbar("Login failed", { variant: "error" });
       }
@@ -57,54 +52,69 @@ const Login = () => {
     validationSchema: LoginSchema,
   });
   return (
-    <div className="container">
-          <div className="card form-card">
-            <div className="card-header">
-              <h2 className="">
-                Welcome to Exhibix   <br /> Login to continue
-              </h2>
-            </div>
-            <div className="card-body">
-              <form onSubmit={loginForm.handleSubmit}>
-                <div className="from-group">
-                  <span style={{ color: "#051832", fontSize: "10" }}>
-                    {loginForm.
-                    touched.email && loginForm.errors.email}
-                  </span><br />
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="Email"
-                    onChange={loginForm.handleChange}
-                    value={loginForm.values.email}
-                    className="inp"
-                  />
+    <div className="container w-50">
+      <div className="row">
+        <div className="col-0"></div>
+        <div className="col-12">
+          <div className="myForm">
+            <form onSubmit={loginForm.handleSubmit}>
+              <div className="row">
+                <div className="col-lg-12">
+                <div className="">
+                <span style={{ color: "#051832", fontSize: "10" }}>
+                  {loginForm.touched.email && loginForm.errors.email}
+                </span>
+                <br />
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Email"
+                  onChange={loginForm.handleChange}
+                  value={loginForm.values.email}
+                  className="input"
+                />
+              </div>
+                </div>
+                <div className="col-lg-12">
+                <div className="mb-3">
+                <span style={{ color: "#051832", fontSize: "10" }}>
+                  {loginForm.touched.password && loginForm.errors.password}
+                </span>
+                <br />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="password"
+                  onChange={loginForm.handleChange}
+                  value={loginForm.values.password}
+                  className="input"
+                />
+              </div>
+                </div>
+                <div className="col-lg-12">
+                  <div className="">
+                    <button type="submit" className="submit-button">
+                      Login
+                    </button>
+                  </div>
+                </div><br /><br />
 
-
+                <div className="col-lg-12">
+                  <div>
+                    <p
+                      className="text-white mt-2 mb-0 text-center"
+                      style={{ fontSize: "12px" }}
+                    >
+                      Alreadt have an account? <Link to="/Signup">Signup</Link>
+                    </p>
+                  </div>
                 </div>
-                <div className="from-group">
-                  <span style={{ color: "#051832", fontSize: "10" }}>
-                    {loginForm.touched.password && loginForm.errors.password}
-                  </span><br />
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    id="password"
-                    onChange={loginForm.handleChange}
-                    value={loginForm.values.password}
-                    className="inp"
-                  />
-                </div>
-                <div className="text-center">
-                  <button type="submit" className="">
-                    <p>Login</p>
-                  </button>
-                  <p className="mt-5 text-center">Dont have an account? <Link className="links" to="/Signup">Signup</Link></p>
-                </div>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
         </div>
+      </div>
+    </div>
   );
 };
 

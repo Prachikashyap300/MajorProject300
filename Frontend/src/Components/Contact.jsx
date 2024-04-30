@@ -2,9 +2,9 @@ import React from "react";
 import im from "../assets/bg.jpg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { enqueueSnackbar } from 'notistack';
+import { enqueueSnackbar } from "notistack";
 import "../App.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
@@ -42,67 +42,79 @@ const Contact = () => {
 
   return (
     <div className="container">
-      
-      <div className="card form-card">
-        <div className="card-header">
-            <h2 className="font-3">
-            Feel free to contact 
-            </h2>
+      <div className="row">
+        <div className="col-lg-5">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia laborum inventore enim. Nostrum, debitis, iure natus accusantium nulla vero sed asperiores autem inventore corrupti dolore animi quibusdam blanditiis, expedita fuga.</p>
         </div>
-        <div className="card-body">
-              <form onSubmit={contactForm.handleSubmit}>
-                <div className="form-group">
-                  <span style={{ color: "#051832", fontSize: "10" }}>
-                    {contactForm.touched.name && contactForm.errors.name}
-                  </span>
-                  <br />
-                  <input
-                    id="name"
-                    placeholder="Name"
-                    type="text"
-                    className="inp"
-                    onChange={contactForm.handleChange}
-                    value={contactForm.values.name}
-                  />
+        <div className="col-lg-7">
+          <div className="myForm">
+            <form onSubmit={contactForm.handleSubmit}>
+              <div className="row">
+                {/* <div className="col-lg-12">
+                  <h1>Contact</h1>
+                </div> */}
+                <div className="col-lg-12">
+                  <div className="">
+                    <span style={{ color: "#051832", fontSize: "10" }}>
+                      {contactForm.touched.name && contactForm.errors.name}
+                    </span>
+                    <br />
+                    <input
+                      id="name"
+                      placeholder="Name"
+                      type="text"
+                      className="input"
+                      onChange={contactForm.handleChange}
+                      value={contactForm.values.name}
+                    />
+                  </div>
                 </div>
-                <div className="form-group">
-                <span style={{ color: "#051832", fontSize: "10" }}>
-                    {contactForm.touched.email && contactForm.errors.email}
-                  </span>
-                  <br />
-                  <input 
-                    id="email"
-                    placeholder="Email"
-                    type="email"
-                    className=" inp"
-                    onChange={contactForm.handleChange}
-                    value={contactForm.values.email}
-                  />
+                <div className="col-lg-12">
+                  <div className="">
+                    <span style={{ color: "#051832", fontSize: "10" }}>
+                      {contactForm.touched.email && contactForm.errors.email}
+                    </span>
+                    <br />
+                    <input
+                      id="email"
+                      placeholder="Email"
+                      type="email"
+                      className=" input"
+                      onChange={contactForm.handleChange}
+                      value={contactForm.values.email}
+                    />
+                  </div>
                 </div>
-                <div className="form-group">
-                <span style={{ color: "#051832", fontSize: "10" }}>
-                    {contactForm.touched.message && contactForm.errors.message}
-                  </span>
-                  <br />
-                  <input
-                    id="messgae"
-                    placeholder="meesss"
-                    type="text-box"
-                    className=" inp  message-box "
-                    onChange={contactForm.handleChange}
-                    value={contactForm.values.message}
-                  />
+                <div className="col-lg-12">
+                  <div className="">
+                    <span style={{ color: "#051832", fontSize: "10" }}>
+                      {contactForm.touched.message &&
+                        contactForm.errors.message}
+                    </span>
+                    <br />
+                    <input
+                      id="messgae"
+                      placeholder="meesss"
+                      type="text-box"
+                      className=" input  message-box "
+                      onChange={contactForm.handleChange}
+                      value={contactForm.values.message}
+                    />
+                  </div>
                 </div>
-                
-                <div className="text-center">
-                  <button type="submit" className="font-2 submit-button">
-                    <p>Send Message</p>
-                  </button>
+                <div className="col-lg-12">
+                  <div className="">
+                    <button type="submit" className="submit-button">
+                      Send
+                    </button>
+                  </div>
                 </div>
-
-              </form>
+                <br />
+                <br />
+              </div>
+            </form>
+          </div>
         </div>
-              
       </div>
     </div>
   );

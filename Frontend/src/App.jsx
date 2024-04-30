@@ -13,15 +13,16 @@ import ManageUsers from "./Components/ManageUser";
 import { UserProvider } from "./UserContext";
 import Admin from "./Components/admin";
 import ManageProject from "./Components/admin/ManageProject";
-import NavbarNew from "./Components/NavbarNew";
+import Project from "./Components/admin/Project";
+import AdminNavbar from "./Components/admin/AdminNavbar";
+import Navbar from "./Components/Navbar";
 const App = () => {
   return (
     <div>
       <SnackbarProvider>
         <BrowserRouter>
           <UserProvider>
-            {/* <Navbar /> */}
-            <NavbarNew/>
+            <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/Home" element={<Home />} />
@@ -33,6 +34,8 @@ const App = () => {
               <Route path="/ManageUser" element={<ManageUsers />} />
              <Route path="/admin" element={<Admin/>}>
                <Route path="ManageProject" element={<ManageProject/>}/>
+               <Route path="Project" element={<Project/>}/>
+               <Route path="AdminNavbar" element={<AdminNavbar/>}/>
              </Route>
 
             </Routes>

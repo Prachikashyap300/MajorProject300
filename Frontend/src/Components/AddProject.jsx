@@ -5,9 +5,9 @@ import { enqueueSnackbar } from "notistack";
 import { Link } from "react-router-dom";
 
 const AddProjectSchema = Yup.object().shape({
-  pname: Yup.string().required("Name is required"),
-  pcateogory: Yup.string().required("pcateogory is required"),
-  pprice: Yup.string().required("Price is required"),
+  ptitle: Yup.string().required("Name is required"),
+  // pcateogory: Yup.string().required("pcateogory is required"),
+  // pprice: Yup.string().required("Price is required"),
   pdescription: Yup.string().required("Description is required"),
 });
 
@@ -15,9 +15,9 @@ const AddProject = () => {
   // step 1: formik initialization
   const AddProjectForm = useFormik({
     initialValues: {
-      pname: "",
-      pcateogory: "",
-      pprice: "",
+      ptitle: "",
+      // pcateogory: "",
+      // pprice: "",
       pdescription: "",
     },
     onSubmit: async (values, action) => {
@@ -33,7 +33,9 @@ const AddProject = () => {
       action.resetForm();
 
       if (res.status === 200) {
-        enqueueSnackbar("Application submitted wait for response", { variant: "success" });
+        enqueueSnackbar("Application submitted wait for response", {
+          variant: "success",
+        });
       } else {
         enqueueSnackbar("Application not submitted", { variant: "error" });
       }
@@ -58,74 +60,57 @@ const AddProject = () => {
   };
 
   return (
-    <div className="container">
-      <div className="card form-card">
-        <div className="card-header">
-          <h3 className="font-3">Project Details</h3>
-        </div>
-        <div className="card-body">
-          {/* step2: handling when submit */}
-          <form onSubmit={AddProjectForm.handleSubmit}>
-            <div className="form-group">
-              <span style={{ color: "red", fontSize: "10" }}>
-                {AddProjectForm.touched.pname && AddProjectForm.errors.pname}
-              </span>
-              <input
-                placeholder="Title"
-                type="text"
-                className="inp mb-4"
-                id="pname"
-                onChange={AddProjectForm.handleChange}
-                value={AddProjectForm.values.pname}
-              />
-            </div>
-            <div className="form-group">
-              <span style={{ color: "red", fontSize: "10" }}>
-                {AddProjectForm.touched.pcateogory &&
-                  AddProjectForm.errors.pcateogory}
-              </span>
-              <input
-                placeholder="Cateogory"
-                type="text"
-                className="inp mb-4"
-                id="pcateogory"
-                onChange={AddProjectForm.handleChange}
-                value={AddProjectForm.values.pcateogory}
-              />
-            </div> 
-            <div className="form-group">
-              <span style={{ color: "red", fontSize: "10" }}>
-                {AddProjectForm.touched.pprice && AddProjectForm.errors.pprice}
-              </span>
-              <input
-                placeholder="Price"
-                type="text"
-                className="inp mb-4"
-                id="pprice"
-                onChange={AddProjectForm.handleChange}
-                value={AddProjectForm.values.pprice}
-              />
-            </div>
-            <div className="form-group">
-              <span style={{ color: "red", fontSize: "10" }}>
-                {AddProjectForm.touched.pdescription &&
-                  AddProjectForm.errors.pdescription}
-              </span>
-              <input
-                placeholder="Description"
-                type="text"
-                className="inp mb-4"
-                id="pdescription"
-                onChange={AddProjectForm.handleChange}
-                value={AddProjectForm.values.pdescription}
-              />
-            </div>
-            <div className="text-center">
-              <button type="submit" className="font-2 submit-button">
-                <p>Add Project</p>
-              </button>
-            </div>
-          </form>
+    <div className="container w-50">
+      <div className="row">
+        <div className="col-lg-0"></div>
+        <div className="col-lg-12">
+          <div className="myForm">
+            <form className="" onSubmit={AddProjectForm.handleSubmit}>
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className="">
+                    <span style={{ color: "red", fontSize: "8px" }}>
+                      {AddProjectForm.touched.ptitle &&
+                        AddProjectForm.errors.ptitle}
+                    </span>
+                    <br />
+                    <input
+                      placeholder="Title"
+                      type="text"
+                      className="input"
+                      id="ptitle"
+                      onChange={AddProjectForm.handleChange}
+                      value={AddProjectForm.values.ptitle}
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-12">
+                  <div className="mb-3">
+                    <span style={{ color: "red", fontSize: "8px" }}>
+                      {AddProjectForm.touched.pdescription &&
+                        AddProjectForm.errors.pdescription}
+                    </span>
+                    <br />
+                    <textarea
+                      placeholder="Description"
+                      className="input"
+                      rows={5}
+                      id="pdescription"
+                      onChange={AddProjectForm.handleChange}
+                      value={AddProjectForm.values.pdescription}
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-12">
+                  <div className="">
+                    <button type="submit" className="submit-button">
+                      Signup
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
