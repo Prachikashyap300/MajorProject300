@@ -5,17 +5,17 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const Update = () => {
   const { id } = useParams();
-  const [projectData, setProductData] = useState(null);
+  const [projectData, setProjectData] = useState(null);
   const [selFile, setSelFile] = useState("");
 
   const navigate = useNavigate();
 
-  const fetchproductData = async () => {
+  const fetchprojectData = async () => {
     const res = await fetch("http://localhost:4000/project/getbyid/" + id);
     const data = await res.json();
 
     console.log(data);
-    setProjecttData(data);
+    setProjectData(data);
   };
 
   useEffect(() => {
@@ -38,11 +38,11 @@ const Update = () => {
     if (res.status === 200) {
       // toast("Updated successfully")
       enqueueSnackbar("Updated successfully", { variant: "success" });
-      navigate("/ProductListing");
+      navigate("/ProjectListing");
     }
   };
 
-  const uploadFile = (e) => {
+  const uploadfile = (e) => {
     const file = e.target.files[0];
     if (!file) return;
     setSelFile(file.name);
@@ -78,6 +78,7 @@ const Update = () => {
                     <input
                       id="ptitle"
                       onChange={AddProjectForm.handleChange}
+                      
                       value={AddProjectForm.values.ptitle}
                       type="text"
                       className="form-control mb-4"
@@ -92,14 +93,15 @@ const Update = () => {
                       className="form-control mb-4"
                     />
 
-                    {/* <label>Upload Image</label>
+                    <label>Upload Image</label>
                     <input
                       type="file"
                       id="pimage"
                       className="form-control mb-4"
                       placeholder="Upload Image"
-                      onChange={uploadFile}
-                    /> */}
+                      onChange={uploadfile}
+                      value={AddProjectForm.values.pimage}
+                    />
 
                     <button type="submit" className="btn btn-primary w-100">
                       Submit

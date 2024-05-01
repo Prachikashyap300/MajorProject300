@@ -15,6 +15,8 @@ import ManageProject from "./Components/admin/ManageProject";
 import Project from "./Components/admin/Project";
 import AdminNavbar from "./Components/admin/AdminNavbar";
 import Nav from "./Components/Nav";
+import UserProfile from "./Components/UserProfile";
+import AdminProfile from "./Components/admin/AdminProfile";
 
 const App = () => {
   return (
@@ -32,10 +34,12 @@ const App = () => {
               <Route path="/AddProject" element={<AddProject />} />
               <Route path="/ProjectListing" element={<ProjectListing />} />
               <Route path="/ManageUser" element={<ManageUsers />} />
+              <Route path="UserProfile" element={<UserProfile/>}/>
              <Route path="/admin" element={<Admin/>}>
                <Route path="ManageProject" element={<ManageProject/>}/>
                <Route path="Project" element={<Project/>}/>
                <Route path="AdminNavbar" element={<AdminNavbar/>}/>
+               <Route path="AdminProfile" element={<AdminProfile/>}/>
              </Route>
 
             </Routes>
