@@ -3,7 +3,7 @@ const {Schema, model} = require('../connection')
 const projectSchema = new Schema({
     ptitle : String,
     // pprice : String,
-    // pcategory : String,
+    pcategory : String,
     pdescription : String,
 });
 

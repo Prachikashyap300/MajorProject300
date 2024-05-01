@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from "react";
 
-const ProductListing = () => {
-  const [products, setProducts] = useState([]);
+const ProjectListing = () => {
+  const [projects, setProjects] = useState([]);
 
-  const fetchProducts = async () => {
+  const fetchProjects = async () => {
     const res = await fetch("http://localhost:4000/Project/getall");
     console.log(res.status);
     if (res.status === 200) {
       const data = await res.json();
       console.log(data);
-      setProducts(data);
+      setProjects(data);
     }
   };
   useEffect(() => {
-    fetchProducts();
+    fetchProjects();
   }, []);
 
-  const displayProducts = () => {
-    return products.map((item) => (
+  const displayProjects = () => {
+    return projects.map((item) => (
       <div className="container ">
         <div className="col-md-4">
           <div className="card p-3 mb-5 bg-dark">
@@ -39,10 +39,10 @@ const ProductListing = () => {
       </header>
 
       <div className="container mt-5">
-        <div className="row mt-5 p-5">{displayProducts()}</div>
+        <div className="row mt-5 p-5">{displayProjects()}</div>
       </div>
     </div>
   );
 };
 
-export default ProductListing;
+export default ProjectListing;

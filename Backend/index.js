@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const userRouter = require('./Routers/User');
 const projectRouter = require('./Routers/Project');
+const utilRouter = require('./Routers/Util');
 
 // cors
 
@@ -16,6 +17,8 @@ app.use(cors({
 app.use(express.json());
 app.use('/user', userRouter); 
 app.use('/project', projectRouter);
+app.use('/util', utilRouter);
+app.use(express.static('./Uplaods'));
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
