@@ -33,11 +33,11 @@ const Project = () => {
       action.resetForm();
 
       if (res.status === 200) {
-        enqueueSnackbar("Application submitted wait for response", {
+        enqueueSnackbar("Project Added Successfully", {
           variant: "success",
         });
       } else {
-        enqueueSnackbar("Application not submitted", { variant: "error" });
+        enqueueSnackbar("Project not added", { variant: "error" });
       }
     },
     validationSchema: AddProjectSchema,
@@ -60,61 +60,101 @@ const Project = () => {
   };
 
   return (
-    <div className="container w-50">
-      <div className="row">
-        <div className="col-lg-0">
-        </div>
-        <div className="col-lg-12">
-          <div className="myForm">
-            <form className="" onSubmit={AddProjectForm.handleSubmit}>
-              <div className="row">
-                <div className="col-lg-12">
-                  <div className="">
-                    <span style={{ color: "red", fontSize: "8px" }}>
-                      {AddProjectForm.touched.ptitle &&
-                        AddProjectForm.errors.ptitle}
-                    </span>
-                    <br />
-                    <input
-                      placeholder="Title"
-                      type="text"
-                      className="input"
-                      id="ptitle"
-                      onChange={AddProjectForm.handleChange}
-                      value={AddProjectForm.values.ptitle}
-                    />
-                  </div>
+    <>
+    {/* Section: Design Block */}
+    <section className="text-center">
+      {/* Background image */}
+      <div
+        className="p-5 bg-image"
+        style={{
+          backgroundImage:
+            'url("https://mdbootstrap.com/img/new/textures/full/171.jpg")',
+          height: 200,
+        }}
+      />
+      {/* Background image */}
+      <div
+        className="card mx-4 mx-md-5 shadow-5-strong bg-body-tertiary"
+        style={{ marginTop: "-100px", backdropFilter: "blur(30px)" }}
+      >
+        <div className="card-body py-5 px-1">
+          <div className="row d-flex justify-content-center">
+            <div className="col-lg-8">
+              <h1 className="fw-bold mb-5">Project Details</h1>
+              <form onSubmit={AddProjectForm.handleSubmit}>
+                <div data-mdb-input-init="" className="form-outline mb-4">
+                  <span style={{ color: "#051832", fontSize: "10" }}>
+                    {AddProjectForm.touched.ptitle &&
+                      AddProjectForm.errors.ptitle}
+                  </span>
+                  <input
+                    placeholder="Title"
+                    type="text"
+                    id="ptitle"
+                    className="form-control"
+                    onChange={AddProjectForm.handleChange}
+                    value={AddProjectForm.values.ptitle}
+                  />
                 </div>
-                <div className="col-lg-12">
-                  <div className="mb-3">
-                    <span style={{ color: "red", fontSize: "8px" }}>
-                      {AddProjectForm.touched.pdescription &&
-                        AddProjectForm.errors.pdescription}
-                    </span>
-                    <br />
-                    <textarea
-                      placeholder="Description"
-                      className="input"
-                      rows={5}
-                      id="pdescription"
-                      onChange={AddProjectForm.handleChange}
-                      value={AddProjectForm.values.pdescription}
-                    />
-                  </div>
+                <div data-mdb-input-init="" className="form-outline mb-4">
+                  <span style={{ color: "#051832", fontSize: "10" }}>
+                    {AddProjectForm.touched.pcateogory &&
+                      AddProjectForm.errors.pcateogory}
+                  </span>
+                  <input
+                    placeholder="Cateogory"
+                    type="text"
+                    id="pcateogory"
+                    className="form-control"
+                    onChange={AddProjectForm.handleChange}
+                    value={AddProjectForm.values.pcateogory}
+                  />
                 </div>
-                <div className="col-lg-12">
-                  <div className="">
-                    <button type="submit" className="submit-button">
-                      Signup
-                    </button>
-                  </div>
+                <div data-mdb-input-init="" className="form-outline mb-4">
+                  <span style={{ color: "#051832", fontSize: "10" }}>
+                    {AddProjectForm.touched.pdescription &&
+                      AddProjectForm.errors.pdescription}
+                  </span>
+                  <input
+                    placeholder="Description"
+                    type="password"
+                    id="pdescription"
+                    className="form-control"
+                    onChange={AddProjectForm.handleChange}
+                    value={AddProjectForm.values.pdescription}
+                  />
                 </div>
-              </div>
-            </form>
+                <div data-mdb-input-init="" className="form-outline mb-4">
+                  <span style={{ color: "#051832", fontSize: "10" }}>
+                    {AddProjectForm.touched.pimage &&
+                      AddProjectForm.errors.pimage}
+                  </span>
+                  <input
+                    placeholder="Upload Image"
+                    type="file"
+                    id="pimage"
+                    className="form-control"
+                    onChange={AddProjectForm.handleChange}
+                    value={AddProjectForm.values.pimage}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  data-mdb-button-init=""
+                  data-mdb-ripple-init=""
+                  className="btn btn-primary btn-block mb-4"
+                >
+                  Add Project 
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    {/* Section: Design Block */}
+  </>
   );
 };
 
