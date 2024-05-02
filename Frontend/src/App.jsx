@@ -14,7 +14,7 @@ import Admin from "./Components/admin";
 import ManageProject from "./Components/admin/ManageProject";
 import Project from "./Components/admin/Project";
 import AdminNavbar from "./Components/admin/AdminNavbar";
-import Nav from "./Components/Nav";
+
 import UserProfile from "./Components/UserProfile";
 import AdminProfile from "./Components/admin/AdminProfile";
 
@@ -23,7 +23,7 @@ const App = () => {
     <div>
       <SnackbarProvider>
         <BrowserRouter>
-        <Nav />
+      
           <UserProvider>
             <Routes>
               <Route path="/" element={<Home />} />
