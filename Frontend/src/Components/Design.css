@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+.fs{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    
+    
+}
+.fw{
+    color: rgb(255, 255, 255);
+}
+.bg:hover{
+    background-color: #166534;
+    color :black;
+}
+
+.image{
+    /* background-image: url("../assets/Code.png"); */
+    background-size: cover;
+    
+    width: 600px;
+    height: 300px;   
+}
+
+.b2{
+    width: 600px;
+    height: 400px;     
+    display: flex;
+    justify-content: center;
+    align-items:center;   
+}
+.b3{
+    height: 300px;
+    width: 500px;
+    text-align: left;
+}
+.t1{
+    margin-top: 80px;
+}
+.height{
+    
+    height: 220px;
+}
