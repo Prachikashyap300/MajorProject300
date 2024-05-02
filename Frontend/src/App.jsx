@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { SnackbarProvider } from "notistack";
-import Home from "./Components/Home";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import Contact from "./Components/Contact";
@@ -14,18 +13,33 @@ import Admin from "./Components/admin";
 import ManageProject from "./Components/admin/ManageProject";
 import Project from "./Components/admin/Project";
 import AdminNavbar from "./Components/admin/AdminNavbar";
-import Nav from "./Components/Nav";
+import Header from "./Components/Header";
+import Section1 from "./Components/Section1";
+import Section2 from "./Components/Section2";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+
 
 const App = () => {
+  const MainLayout =() => (
+    <div>
+      <div>
+       <Navbar />
+        <Header />
+      </div>
+      <Section1 />
+      <Section2 />
+      <Footer />
+    </div>
+  ) 
   return (
     <div>
       <SnackbarProvider>
         <BrowserRouter>
-        <Nav />
           <UserProvider>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/Home" element={<Home />} />
+              <Route path="/" element={<MainLayout />} />
+              <Route path="/Home" element={<Header />} />
               <Route path="/Signup" element={<Signup />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/Contact" element={<Contact />} />
