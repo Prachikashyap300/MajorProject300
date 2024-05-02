@@ -1,3 +1,4 @@
+import { enqueueSnackbar } from "notistack";
 import React, { useState, useEffect } from "react";
 
 const ManageUser = () => {
@@ -22,7 +23,10 @@ const ManageUser = () => {
       method: "DELETE",
     });
     if (res.status === 200) {
+      enqueueSnackbar("user deleted successfully", {variant:"success"})
       fetchUserData();
+    }else{
+      enqueueSnackbar("something went wrong", {variant:"error"})
     }
   };
 
