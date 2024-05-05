@@ -1,24 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { enqueueSnackbar } from "notistack";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 
 const AddProjectSchema = Yup.object().shape({
-  ptitle: Yup.string().required("Name is required"),
-  // pcateogory: Yup.string().required("pcateogory is required"),
-  // pprice: Yup.string().required("Price is required"),
-  pdescription: Yup.string().required("Description is required"),
+  ptitle: Yup.string().required("Title is required**"),
+  pcateogory: Yup.string().required("Cateogory is required**"),
+  pdescription: Yup.string().required("Description is required**"),
+  porganisation: Yup.string().required("Organisation name is required**"),
+  pimage: Yup.string().required("Image  is required**"),
 });
 
 const Project = () => {
+  const [file, setSelFile] = useState([]);
   // step 1: formik initialization
   const AddProjectForm = useFormik({
     initialValues: {
       ptitle: "",
-      // pcateogory: "",
-      // pprice: "",
+      pcateogory: "",
       pdescription: "",
+      porganisation: "",
+      pimage: "",
     },
     onSubmit: async (values, action) => {
       console.log(values);
@@ -33,17 +37,18 @@ const Project = () => {
       action.resetForm();
 
       if (res.status === 200) {
-        enqueueSnackbar("Project Added Successfully", {
+        enqueueSnackbar("Application submitted wait for response", {
           variant: "success",
         });
+        // navigate("/Login");
       } else {
-        enqueueSnackbar("Project not added", { variant: "error" });
+        enqueueSnackbar("Application not submitted", { variant: "error" });
       }
     },
     validationSchema: AddProjectSchema,
   });
 
-  const uploadFile = (e) => {
+  const uploadfile = (e) => {
     const file = e.target.files[0];
     if (!file) return;
     setSelFile(file.name);
@@ -60,101 +65,161 @@ const Project = () => {
   };
 
   return (
-    <>
-    {/* Section: Design Block */}
-    <section className="text-center">
-      {/* Background image */}
-      <div
-        className="p-5 bg-image"
-        style={{
-          backgroundImage:
-            'url("https://mdbootstrap.com/img/new/textures/full/171.jpg")',
-          height: 200,
-        }}
-      />
-      {/* Background image */}
-      <div
-        className="card mx-4 mx-md-5 shadow-5-strong bg-body-tertiary"
-        style={{ marginTop: "-100px", backdropFilter: "blur(30px)" }}
-      >
-        <div className="card-body py-5 px-1">
-          <div className="row d-flex justify-content-center">
-            <div className="col-lg-8">
-              <h1 className="fw-bold mb-5">Project Details</h1>
-              <form onSubmit={AddProjectForm.handleSubmit}>
-                <div data-mdb-input-init="" className="form-outline mb-4">
-                  <span style={{ color: "#051832", fontSize: "10" }}>
-                    {AddProjectForm.touched.ptitle &&
-                      AddProjectForm.errors.ptitle}
-                  </span>
-                  <input
-                    placeholder="Title"
-                    type="text"
-                    id="ptitle"
-                    className="form-control"
-                    onChange={AddProjectForm.handleChange}
-                    value={AddProjectForm.values.ptitle}
-                  />
-                </div>
-                <div data-mdb-input-init="" className="form-outline mb-4">
-                  <span style={{ color: "#051832", fontSize: "10" }}>
-                    {AddProjectForm.touched.pcateogory &&
-                      AddProjectForm.errors.pcateogory}
-                  </span>
-                  <input
-                    placeholder="Cateogory"
-                    type="text"
-                    id="pcateogory"
-                    className="form-control"
-                    onChange={AddProjectForm.handleChange}
-                    value={AddProjectForm.values.pcateogory}
-                  />
-                </div>
-                <div data-mdb-input-init="" className="form-outline mb-4">
-                  <span style={{ color: "#051832", fontSize: "10" }}>
-                    {AddProjectForm.touched.pdescription &&
-                      AddProjectForm.errors.pdescription}
-                  </span>
-                  <input
-                    placeholder="Description"
-                    type="password"
-                    id="pdescription"
-                    className="form-control"
-                    onChange={AddProjectForm.handleChange}
-                    value={AddProjectForm.values.pdescription}
-                  />
-                </div>
-                <div data-mdb-input-init="" className="form-outline mb-4">
-                  <span style={{ color: "#051832", fontSize: "10" }}>
-                    {AddProjectForm.touched.pimage &&
-                      AddProjectForm.errors.pimage}
-                  </span>
-                  <input
-                    placeholder="Upload Image"
-                    type="file"
-                    id="pimage"
-                    className="form-control"
-                    onChange={AddProjectForm.handleChange}
-                    value={AddProjectForm.values.pimage}
-                  />
-                </div>
+    <section className="p-20 bg-violet-500"> 
+    <form
+      className=" m-5 p-5 bg-gray-100 rounded shadow "
+      onSubmit={AddProjectForm.handleSubmit}
+    >
+      <div className="space-y-12">
+        <div className="border-b border-gray-900/10 pb-12">
+          <h2 className="text-base font-semibold leading-7 text-gray-900">
+            Project Details
+          </h2>
+          <p className="mt-1 text-sm leading-6 text-gray-600">
+            Add the details of your project
+          </p>
 
-                <button
-                  type="submit"
-                  data-mdb-button-init=""
-                  data-mdb-ripple-init=""
-                  className="btn btn-primary btn-block mb-4"
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            <div className="sm:col-span-4">
+              <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                Title
+              </label>
+              <span style={{ color: "red", fontSize: "8" }}>
+                {AddProjectForm.touched.ptitle && AddProjectForm.errors.ptitle}
+              </span>
+              <div className="mt-2">
+                <input
+                  id="ptitle"
+                  type="text"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  onChange={AddProjectForm.handleChange}
+                  value={AddProjectForm.values.ptitle}
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-3">
+              <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                Cateogory
+              </label>
+              <span style={{ color: "red", fontSize: "8" }}>
+                {AddProjectForm.touched.pcateogory &&
+                  AddProjectForm.errors.pcateogory}
+              </span>
+              <div className="mt-2">
+                <select
+                  id="pcateogory"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  onChange={AddProjectForm.handleChange}
+                  value={AddProjectForm.values.pcateogory}
                 >
-                  Add Project 
-                </button>
-              </form>
+                  <option>Reading/ Writing</option>
+                  <option>Information technology </option>
+                  <option>Design </option>
+                  <option>Management </option>
+                  <option>Problem solving/ desicion making </option>
+                  <option>Real world authentic projects </option>
+                </select>
+              </div>
+            </div>
+
+            <div className="col-span-full">
+              <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                Description
+              </label>
+              <span style={{ color: "red", fontSize: "8" }}>
+                {AddProjectForm.touched.pdescription &&
+                  AddProjectForm.errors.pdescription}
+              </span>
+              <div className="mt-2">
+                <textarea
+                  id="pdescription"
+                  rows={3}
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  defaultValue={""}
+                  onChange={AddProjectForm.handleChange}
+                  value={AddProjectForm.values.pdescription}
+                />
+              </div>
+              <p className="mt-3 text-sm leading-6 text-gray-600">
+                Describe your Project.
+              </p>
+            </div>
+
+            <div className="sm:col-span-3">
+              <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                Organisation
+              </label>
+              <span style={{ color: "red", fontSize: "8" }}>
+                {AddProjectForm.touched.porganisation &&
+                  AddProjectForm.errors.porganisation}
+              </span>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  id="porgansation"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  onChange={AddProjectForm.handleChange}
+                  value={AddProjectForm.values.porganisation}
+                />
+              </div>
+            </div>
+
+            <div className="col-span-full">
+              <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                Cover photo
+              </label>
+              <span style={{ color: "red", fontSize: "8" }}>
+                {AddProjectForm.touched.pimage && AddProjectForm.errors.pimage}
+              </span>
+              <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                <div className="text-center">
+                  <PhotoIcon
+                    className="mx-auto h-12 w-12 text-gray-300"
+                    aria-hidden="true"
+                  />
+                  <div className="mt-4 flex text-sm leading-6 text-gray-600">
+                    <label
+                      htmlFor="file-upload"
+                      className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
+                    >
+                      <span>Upload a file</span>
+                      <input
+                        id="pimage"
+                        type="file"
+                        className="sr-only"
+                        onChange={AddProjectForm.handleChange}
+                        value={AddProjectForm.values.pimage}
+                      />
+                    </label>
+                    <p className="pl-1">or drag and drop</p>
+                  </div>
+                  <p className="text-xs leading-5 text-gray-600">
+                    PNG, JPG, GIF up to 10MB
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div className="mt-6 flex items-center justify-end gap-x-6">
+        <button
+          type="submit"
+          className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+        >
+          Submit
+        </button>
+        <button
+          type="reset"
+          className="text-sm font-semibold leading-6 text-gray-900"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
     </section>
-    {/* Section: Design Block */}
-  </>
   );
 };
 

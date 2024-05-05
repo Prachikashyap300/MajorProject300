@@ -11,18 +11,18 @@ import ProjectListing from "./Components/ProjectListing";
 import { UserProvider } from "./UserContext";
 import Admin from "./Components/admin";
 import ManageProject from "./Components/admin/ManageProject";
-import Project from "./Components/admin/Project";
-import AdminNavbar from "./Components/admin/AdminNavbar";
+// import Project from "./Components/admin/Project";
+// import AdminNavbar from "./Components/admin/AdminNavbar";
 import Header from "./Components/Header";
 import Section1 from "./Components/Section1";
 import Section2 from "./Components/Section2";
 import Footer from "./Components/Footer";
 // import Navbar from "./Components/Navbar";
-
-
 import UserProfile from "./Components/UserProfile";
 import AdminProfile from "./Components/admin/AdminProfile";
 import ManageUser from "./Components/admin/ManageUser";
+import Project from "./Components/admin/Project";
+import FormDesign from "./Components/FormDesign";
 
 const App = () => {
   const MainLayout =() => (
@@ -47,6 +47,7 @@ const App = () => {
               <Route path="/Home" element={<Header />} />
               <Route path="/Signup" element={<Signup />} />
               <Route path="/Login" element={<Login />} />
+              <Route path="/FormDesign" element={<FormDesign />} />
               <Route path="/Contact" element={<Contact />} />
               <Route path="/AddProject" element={<AddProject />} />
               <Route path="/ProjectListing" element={<ProjectListing />} />
@@ -57,7 +58,8 @@ const App = () => {
                <Route path="ManageProject" element={<ManageProject/>}/>
                <Route path="ManageUser" element={<ManageUser/>}/>
                <Route path="Project" element={<Project/>}/>
-               <Route path="AdminNavbar" element={<AdminNavbar/>}/>
+               {/* <Route path="Project" element={<Project/>}/> */}
+               {/* <Route path="AdminNavbar" element={<AdminNavbar/>}/> */}
                <Route path="AdminProfile" element={<AdminProfile/>}/>
              </Route>
 

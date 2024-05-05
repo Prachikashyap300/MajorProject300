@@ -1,3 +1,4 @@
+import { enqueueSnackbar } from "notistack";
 import React, { useState, useEffect } from "react";
 
 const ManageProject = () => {
@@ -32,10 +33,10 @@ const ManageProject = () => {
 
   const displayProject = () => {
     return Data.map((project) => (
-      <tr>
-        <td>{project.ptitle}</td>
-        <td>{project.pdescription}</td>
-        <td>
+      <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+        <td className="px-6 py-4">{project.ptitle}</td>
+        <td className="px-6 py-4">{project.pdescription}</td>
+        <td className="px-6 py-4">
           <button
             onClick={() => {
               deleteProject(project._id);
@@ -49,38 +50,61 @@ const ManageProject = () => {
     ));
   };
   return (
-    <section className="intro mt-5">
-      <div className="bg-image h-100" style={{ backgroundColor: "#f5f7fa" }}>
-        <div className="mask d-flex align-items-center h-100">
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-12">
-                <div className="table-card">
-                  <div className="table-card-body p-0">
-                    <div
-                      className="table-responsive table-scroll"
-                      data-mdb-perfect-scrollbar="true"
-                      style={{ position: "relative", height: 700 }}
-                    >
-                      <table className="table table-striped mb-0">
-                        <thead style={{ backgroundColor: "#002d72" }}>
-                          <tr className="">
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody>{displayProject()}</tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-3">
+  <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" className="px-6 py-3">
+          Project Title
+        </th>
+        <th scope="col" className="px-6 py-3">
+          Description
+        </th>
+        <th scope="col" className="px-6 py-3">
+          
+        </th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {displayProject()}
+    </tbody>
+  </table>
+</div>
+
+
+    // <section className="intro mt-5">
+    //   <div className="bg-image h-100">
+    //     <div className="mask d-flex align-items-center h-100">
+    //       <div className="container">
+    //         <div className="row justify-content-center">
+    //           <div className="col-12">
+    //             <div className="table-card">
+    //               <div className="table-card-body p-0">
+    //                 <div
+    //                   className="table-responsive table-scroll"
+    //                   data-mdb-perfect-scrollbar="true"
+    //                   style={{ position: "relative", height: 700 }}
+    //                 >
+    //                   <table className="table table-striped mb-0" >
+    //                     <thead style={{ backgroundColor: "#002d72", color:"white" }}>
+    //                       <tr className="">
+    //                         <th className="text-white">Title</th>
+    //                         <th className="text-white">Description</th>
+    //                         <th></th>
+    //                       </tr>
+    //                     </thead>
+    //                     <tbody>{displayProject()}</tbody>
+    //                   </table>
+    //                 </div>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </section>
 
     // <div>
     //     <header className='text-center mt-5'>
