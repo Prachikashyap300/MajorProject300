@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+
 const ProjectListing = () => {
   const [projects, setProjects] = useState([]);
 
@@ -16,6 +17,7 @@ const ProjectListing = () => {
     fetchProjects();
   }, []);
 
+  
   const displayProjects = () => {
     return projects.map((item) => (
       <div className="container ">
