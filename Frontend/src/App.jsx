@@ -24,11 +24,13 @@ import AdminProfile from "./Components/admin/AdminProfile";
 import ManageUser from "./Components/admin/ManageUser";
 import Project from "./Components/admin/Project";
 import FormDesign from "./Components/FormDesign";
+import MenuBar from "./Components/MenuBar";
 
 const App = () => {
   const MainLayout =() => (
     <div>
       <div>
+        <MenuBar/>
        {/* <Navbar /> */}
         <Header />
       </div>
@@ -43,6 +45,7 @@ const App = () => {
       <SnackbarProvider>
         <BrowserRouter>
         {/* <Nav /> */}
+        {/* <MenuBar/> */}
           <UserProvider>
             <Routes>
               <Route path="/" element={<MainLayout />} />

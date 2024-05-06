@@ -36,6 +36,7 @@ const Header = () => {
       </ul>
     </div>
     {/*End Background Animation Body*/}
+    
       <header className="container-md h-screen  ok">
         <div className="container mx-auto py-4 flex justify-center ">
           <div className=" flex justify-center t1">

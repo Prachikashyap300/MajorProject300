@@ -4,8 +4,8 @@ const projectSchema = new Schema({
     ptitle : String,
     pcategory : String,
     pdescription : String,
-    // poragnaisation : String,
-    // pimage : File
+    poragnaisation : String,
+    pimage : String
 });
 
 module.exports = model('project', projectSchema);

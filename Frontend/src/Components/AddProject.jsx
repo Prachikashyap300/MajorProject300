@@ -146,18 +146,17 @@ const AddProject = () => {
               </p>
             </div>
 
-            <div className="sm:col-span-3">
+            <div className="sm:col-span-4">
               <label className="me-2 text-sm font-medium leading-6 text-gray-900">
                 Organisation
               </label>
               <span style={{ color: "red", fontSize: "8" }}>
-                {AddProjectForm.touched.porganisation &&
-                  AddProjectForm.errors.porganisation}
+                {AddProjectForm.touched.ptitle && AddProjectForm.errors.ptitle}
               </span>
               <div className="mt-2">
                 <input
+                  id="porganisation"
                   type="text"
-                  id="porgansation"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   onChange={AddProjectForm.handleChange}
                   value={AddProjectForm.values.porganisation}
@@ -187,7 +186,7 @@ const AddProject = () => {
                       <input
                         id="pimage"
                         type="file"
-                        className="sr-only"
+                        // className="sr-only"
                         onChange={AddProjectForm.handleChange}
                         value={AddProjectForm.values.pimage}
                       />
