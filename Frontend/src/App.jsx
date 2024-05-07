@@ -25,6 +25,7 @@ import ManageUser from "./Components/admin/ManageUser";
 import Project from "./Components/admin/Project";
 import FormDesign from "./Components/FormDesign";
 import MenuBar from "./Components/MenuBar";
+import ForgetPassword from "./Components/ForgetPassword";
 
 const App = () => {
   const MainLayout =() => (
@@ -52,6 +53,7 @@ const App = () => {
               <Route path="/Home" element={<Header />} />
               <Route path="/Signup" element={<Signup />} />
               <Route path="/Login" element={<Login />} />
+              <Route path="/ForgetPassword" element={<ForgetPassword />} />
               <Route path="/FormDesign" element={<FormDesign />} />
               <Route path="/Contact" element={<Contact />} />
               <Route path="/AddProject" element={<AddProject />} />

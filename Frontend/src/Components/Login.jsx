@@ -112,6 +112,14 @@ const Login = () => {
                 Signup here
               </a>
             </p>
+            <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+              <a
+                href="/ForgetPassword"
+                className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+              >
+                Forget Password
+              </a>
+            </p>
           </form>
         </div>
       </div>
