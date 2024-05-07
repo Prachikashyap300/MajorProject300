@@ -14,7 +14,7 @@ const ForgetPassword = () => {
 
   const checkMailExists = async () => {
     const res = await fetch(
-      `http://localhost:3000/user/getbyemail/${emailRef.current.value}`
+      `http://localhost:4000/user/getbyemail/${emailRef.current.value}`
     );
     // console.log(res.status);
     const data = await res.json();
@@ -28,7 +28,7 @@ const ForgetPassword = () => {
       enqueueSnackbar("Email not registered", { variant: "error" });
       return;
     }
-    const res = await fetch(`http://localhost:3000/util/sendotp`, {
+    const res = await fetch(`http://localhost:4000/util/sendotp`, {
       method: "POST",
       body: JSON.stringify({ email: emailRef.current.value }),
       headers: {
@@ -45,7 +45,7 @@ const ForgetPassword = () => {
 
   const verifyOTP = async () => {
     const res = await fetch(
-      `http://localhost:3000/util/verifyotp/${emailRef.current.value}/${otpRef.current.value}`
+      `http://localhost:4000/util/verifyotp/${emailRef.current.value}/${otpRef.current.value}`
     );
     // console.log(res.status);
     if (res.status === 200) {
@@ -57,7 +57,7 @@ const ForgetPassword = () => {
 
   const updatePassword = async (values) => {
     const res = await fetch(
-      `http://localhost:3000/user/update/${verifiedUser._id}`,
+      `http://localhost:4000/user/update/${verifiedUser._id}`,
       {
         method: "PUT",
         body: JSON.stringify(values),

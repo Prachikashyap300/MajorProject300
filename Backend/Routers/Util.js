@@ -1,6 +1,7 @@
 const multer = require('multer');
 const express = require('express');
 const router = express.Router();
+const nodemailer = require('nodemailer')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -21,7 +22,7 @@ const mailConfig = {
     service : 'gmail',
     auth: {
         user: "exhibix53@gmail.com",
-        pass: "yyei vuxa gtkz sglj",
+        pass: "yyeivuxagtkzsglj",
     }
  };
  const transporter = nodemailer.createTransport(mailConfig);
