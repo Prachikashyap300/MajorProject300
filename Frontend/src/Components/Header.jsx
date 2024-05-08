@@ -22,7 +22,7 @@ const Header = () => {
     
     <>
     {/*Start Background Animation Body*/}
-    {/* <div className="area">
+    <div className="area">
       <ul className="circles">
         <li />
         <li />
@@ -35,7 +35,7 @@ const Header = () => {
         <li />
         <li />
       </ul>
-    </div> */}
+    </div>
     {/*End Background Animation Body*/}
     
       <header className="container-md h-screen  ok">
