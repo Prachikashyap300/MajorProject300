@@ -57,6 +57,7 @@ const Signup = () => {
   });
   return (
     <section className="flex items-center justify-center bg-violet-500">
+      <div className="mt-20">
       <form
         className="m-5 p-5 bg-white rounded shadow-2xl"
         onSubmit={signupForm.handleSubmit}
@@ -223,6 +224,8 @@ const Signup = () => {
           </a>
         </p>
       </form>
+      </div>
+      
     </section>
   );
 };

@@ -10,7 +10,7 @@ const AddProjectSchema = Yup.object().shape({
   pcateogory: Yup.string().required("Cateogory is required**"),
   pdescription: Yup.string().required("Description is required**"),
   porganisation: Yup.string().required("Organisation name is required**"),
-  pimage: Yup.string().required("Image  is required**"),
+  // pimage: Yup.string().required("Image  is required**"),
 });
 
 const AddProject = () => {
@@ -25,6 +25,7 @@ const AddProject = () => {
       pimage: "",
     },
     onSubmit: async (values, action) => {
+      values.pimage = file.name
       console.log(values);
       const res = await fetch("http://localhost:4000/project/add", {
         method: "POST",
@@ -51,7 +52,7 @@ const AddProject = () => {
   const uploadfile = (e) => {
     const file = e.target.files[0];
     if (!file) return;
-    setSelFile(file.name);
+    setSelFile(file);
     const fd = new FormData();
     fd.append("myfile", file);
     fetch("http://localhost:4000/util/uploadfile", {
@@ -169,7 +170,7 @@ const AddProject = () => {
                 Cover photo
               </label>
               <span style={{ color: "red", fontSize: "8" }}>
-                {AddProjectForm.touched.pimage && AddProjectForm.errors.pimage}
+               
               </span>
               <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                 <div className="text-center">
@@ -184,11 +185,10 @@ const AddProject = () => {
                     >
                       <span>Upload a file</span>
                       <input
-                        id="pimage"
+                    
                         type="file"
                         // className="sr-only"
-                        onChange={AddProjectForm.handleChange}
-                        value={AddProjectForm.values.pimage}
+                       onChange={uploadfile}
                       />
                     </label>
                     <p className="pl-1">or drag and drop</p>

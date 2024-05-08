@@ -5,7 +5,8 @@ const projectSchema = new Schema({
     pcategory : String,
     pdescription : String,
     poragnaisation : String,
-    pimage : String
+    pimage : String,
+    verified: {type: Boolean, default: false}
 });
 
 module.exports = model('project', projectSchema);

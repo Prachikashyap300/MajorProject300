@@ -7,6 +7,7 @@ import "../App.css";
 import { Link, useNavigate } from "react-router-dom";
 import useUserContext from "../UserContext";
 
+
 const LoginSchema = Yup.object().shape({
   email: Yup.string().required("Email is required"),
   password: Yup.string().required("Password is required"),
@@ -16,7 +17,7 @@ const Login = () => {
   const navigate = useNavigate();
   //for logout
 
-  const { setLoggedIn } = useUserContext;
+  const { setLoggedIn } = useUserContext();
 
   // step 1: formik initialization
   const loginForm = useFormik({
@@ -38,8 +39,8 @@ const Login = () => {
 
       if (res.status === 200) {
         enqueueSnackbar("Login successful", { variant: "success" });
-        navigate("/");
         setLoggedIn(true);
+        navigate("/");
 
         const data = await res.json();
         console.log(data);
@@ -52,9 +53,9 @@ const Login = () => {
     validationSchema: LoginSchema,
   });
   return (
-    <section className="h-screen w-screen bg-violet-500 ">
+    <section className=" h-screen w-screen bg-violet-500 ">
     <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-      <div className=" bg-gray-100 w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
+      <div className="mt-5 bg-gray-100 w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
             Login into your account

@@ -23,13 +23,36 @@ const ManageProject = () => {
       method: "DELETE",
     });
     if (res.status === 200) {
-      enqueueSnackbar("Project deleted successfully", {variant:"success"})
+      enqueueSnackbar("Project deleted successfully", { variant: "success" });
       fetchProjectData();
-    }else{
-      enqueueSnackbar("something went wrong", {variant:"error"})
+    } else {
+      enqueueSnackbar("something went wrong", { variant: "error" });
     }
   };
 
+  const updateVerified = async (projectId) => {
+    console.log(projectId);
+    const res = await fetch(
+      `http://localhost:4000/project/update/${projectId}`,
+      {
+        method: "PUT",
+        body: JSON.stringify({ verified: true }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    if (res.status === 200) {
+      setData(
+        Data.map((project) =>
+          project._id === projectId ? { ...project, verified: true } : project
+        )
+      );
+      enqueueSnackbar("project verified successfully", { variant: "success" });
+    } else {
+      enqueueSnackbar("something went wrong", { variant: "error" });
+    }
+  };
 
   const displayProject = () => {
     return Data.map((project) => (
@@ -46,32 +69,37 @@ const ManageProject = () => {
             Delete
           </button>
         </td>
+        <td className="px-6 py-4">
+          <button
+            onClick={() => {
+              updateVerified(project._id);
+            }}
+            className="btn btn-danger"
+          >
+          
+            {project.verified ? "Verified" : "Verify"}
+          </button>
+        </td>
       </tr>
     ));
   };
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-3">
-  <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-      <tr>
-        <th scope="col" className="px-6 py-3">
-          Project Title
-        </th>
-        <th scope="col" className="px-6 py-3">
-          Description
-        </th>
-        <th scope="col" className="px-6 py-3">
-          
-        </th>
-        
-      </tr>
-    </thead>
-    <tbody>
-      {displayProject()}
-    </tbody>
-  </table>
-</div>
-
+      <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+            <th scope="col" className="px-6 py-3">
+              Project Title
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Description
+            </th>
+            <th scope="col" className="px-6 py-3"></th>
+          </tr>
+        </thead>
+        <tbody>{displayProject()}</tbody>
+      </table>
+    </div>
 
     // <section className="intro mt-5">
     //   <div className="bg-image h-100">

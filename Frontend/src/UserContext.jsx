@@ -12,7 +12,7 @@ export const UserProvider = ({ children }) => {
     const logout = () => {
         sessionStorage.removeItem('user');
         setLoggedIn(false);
-        navigate('/user/home');
+        navigate('/');
     }
     
     return (

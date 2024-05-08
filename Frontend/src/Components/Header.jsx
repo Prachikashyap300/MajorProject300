@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 // import { LoginContext } from "../Context/LoginContext";
 import { enqueueSnackbar } from "notistack";
 import "../Components/FormDesign.css"
+import {Link} from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Header = () => {
     
     <>
     {/*Start Background Animation Body*/}
-    <div className="area">
+    {/* <div className="area">
       <ul className="circles">
         <li />
         <li />
@@ -34,7 +35,7 @@ const Header = () => {
         <li />
         <li />
       </ul>
-    </div>
+    </div> */}
     {/*End Background Animation Body*/}
     
       <header className="container-md h-screen  ok">
@@ -43,8 +44,8 @@ const Header = () => {
             <div className="bg-transparent b2  mr-10">
               <div className="b3 mr-[20%]">
                 <h1 className="text-5xl  fs text-pink-500">  EXHIBIX   </h1>
-                <h5 className="mt-10"><ReactTyped className="text-2xl text-white " strings={["Innovate. Create. Showcase"]} typeSpeed={100} loop /></h5>
-                <button onClick={handleclick} className=" mt-12 text-white text-lg cursur-pointer bg-blue-500 p-1 rounded-md px-4 py-3 hover:bg-blue-700">Upload Project</button>
+                <h5 className="mt-10"><ReactTyped className="text-2xl  " strings={["Innovate. Create. Showcase"]} typeSpeed={100} loop /></h5>
+                <button onClick={handleclick} className=" mt-12 text-white text-lg cursur-pointer bg-blue-500 p-1 rounded-md px-4 py-3 hover:bg-blue-700"><Link to="/AddProject">Upload Project</Link></button>
               </div>
 
             </div>
