@@ -7,5 +7,6 @@ const userSchema = new Schema({
     course: String,
     password: String,
     cpassword: String,
+    uimage: String
 });
 module.exports = model('user', userSchema)

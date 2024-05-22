@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { enqueueSnackbar } from "notistack";
 import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
-// import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 
 const SignupSchema = Yup.object().shape({
   fname: Yup.string().required("** First Name is required").min(3, "to short"),
@@ -12,6 +12,7 @@ const SignupSchema = Yup.object().shape({
   email: Yup.string().required("** Email is required"),
   college: Yup.string().required("** College is required"),
   course: Yup.string().required(" ** Course is required"),
+  uimage: Yup.string().required("** Image is required"),
   password: Yup.string()
     .required("Password is required")
     .matches(
@@ -31,6 +32,7 @@ const Signup = () => {
       email: "",
       college: "",
       course: "",
+      uimage: "",
       password: "",
       cpassword: "",
     },
@@ -55,15 +57,31 @@ const Signup = () => {
     },
     validationSchema: SignupSchema,
   });
+
+  const uploadfile = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    setSelFile(file);
+    const fd = new FormData();
+    fd.append("myfile", file);
+    fetch("http://localhost:4000/util/uploadfile", {
+      method: "POST",
+      body: fd,
+    }).then((res) => {
+      if (res.status === 200) {
+        console.log("file uploaded");
+      }
+    });
+  };
   return (
-    <section className="flex items-center justify-center bg-violet-500">
+    <section className="flex items-center justify-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 transparent">
       <div className="mt-20">
       <form
-        className="m-5 p-5 bg-white rounded shadow-2xl"
+        className="hover:scale-110 m-5 p-5  rounded shadow-2xl bg-gray-50/50 transition-all duration-1000"
         onSubmit={signupForm.handleSubmit}
       >
         <div className="space-y-12 mb-5">
-          <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+          <h1 className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl">
             Create an account
           </h1>
 
@@ -81,7 +99,7 @@ const Signup = () => {
                 <input
                   type="tesxt"
                   id="fname"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
                   onChange={signupForm.handleChange}
                   value={signupForm.values.fname}
                 />
@@ -99,7 +117,7 @@ const Signup = () => {
                 <input
                   type="text"
                   id="lname"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
                   onChange={signupForm.handleChange}
                   value={signupForm.values.lname}
                 />
@@ -117,7 +135,7 @@ const Signup = () => {
                 <input
                   type="email"
                   id="email"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
                   onChange={signupForm.handleChange}
                   value={signupForm.values.email}
                 />
@@ -135,7 +153,7 @@ const Signup = () => {
                 <select
                   id="college"
                   autoComplete="country-name"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
                   onChange={signupForm.handleChange}
                   value={signupForm.values.college}
                 >
@@ -157,7 +175,7 @@ const Signup = () => {
                 <input
                   type="text"
                   id="course"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
                   onChange={signupForm.handleChange}
                   value={signupForm.values.course}
                 />
@@ -176,7 +194,7 @@ const Signup = () => {
                   type="password"
                   id="password"
                   placeholder="••••••••"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
                   onChange={signupForm.handleChange}
                   value={signupForm.values.password}
                 />
@@ -198,10 +216,42 @@ const Signup = () => {
                   type="password"
                   id="cpassword"
                   placeholder="••••••••"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
                   onChange={signupForm.handleChange}
                   value={signupForm.values.cpassword}
                 />
+              </div>
+            </div>
+            <div className="col-span-full">
+              <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                Profile photo
+              </label>
+              <span style={{ color: "red", fontSize: "8" }}></span>
+              <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                <div className="text-center">
+                  <PhotoIcon
+                    className="mx-auto h-12 w-12 text-gray-300"
+                    aria-hidden="true"
+                  />
+                  <div className="mt-4 flex text-sm leading-6 text-gray-600">
+                    <label
+                      htmlFor="file-upload"
+                      className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
+                    >
+                      <span>Upload</span>
+                      <input
+                    
+                        type="file"
+                        // className="sr-only"
+                       onChange={uploadfile}
+                      />
+                    </label>
+                    <p className="pl-1">or drag and drop</p>
+                  </div>
+                  <p className="text-xs leading-5 text-gray-600">
+                    PNG, JPG, GIF up to 10MB
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -209,7 +259,7 @@ const Signup = () => {
 
         <button
           type="submit"
-          class="w-100 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+          class="w-50 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
         >
           Signup
         </button>

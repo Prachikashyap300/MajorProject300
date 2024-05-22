@@ -29,6 +29,7 @@ import MenuBar from "./Components/MenuBar";
 import ForgetPassword from "./Components/ForgetPassword";
 import ViewProject from "./Components/user/ViewProject";
 import User from "./Components/user";
+import AdminLogin from "./Components/AdminLogin";
 
 const App = () => {
   const MainLayout = () => (
@@ -36,10 +37,10 @@ const App = () => {
       <div>
         <Header />
       </div>
-      <Section1 />
+      {/* <Section1 />
       <Section2 />
       <Section3 />
-      <Footer />
+      <Footer /> */}
     </div>
   );
   return (
@@ -57,7 +58,8 @@ const App = () => {
               <Route path="/ForgetPassword" element={<ForgetPassword />} />
               <Route path="/FormDesign" element={<FormDesign />} />
               <Route path="/Contact" element={<Contact />} />
-
+              <Route path="/AdminLogin" element={<AdminLogin />} />
+            
               <Route path="user" element={<User />}>
                 <Route path="AddProject" element={<AddProject />} />
                 <Route path="ProjectListing" element={<ProjectListing />} />

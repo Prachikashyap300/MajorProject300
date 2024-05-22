@@ -4,8 +4,8 @@ import Sidebar from "./Sidebar";
 
 const Admin = () => {
   return (
-    <>
-      <div class="grid grid-rows-3 grid-flow-col ">
+    <div className="vh-100 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 transparent">
+      <div class=" grid grid-rows-3 grid-flow-col ">
         <div class="row-span-3 ...">
           <Sidebar/>
         </div>
@@ -14,7 +14,7 @@ const Admin = () => {
         </div>
         {/* <div class="row-span-2 col-span-2 ...">03</div> */}
       </div>
-    </>
+    </div>
   );
 };
 

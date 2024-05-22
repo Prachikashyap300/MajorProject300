@@ -40,41 +40,41 @@ const MenuBar = () => {
     }
   }
   return (
-    <header className="mt-3 fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border-0  bg-violet-500/50 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
+    <header className="mt-3 fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border-0  bg-white-500/50 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
       <div className="px-4">
         <div className="flex items-center justify-between">
           <div className="flex shrink-0">
             <a aria-current="page" className="flex items-center" href="/">
-              <img
+              {/* <img
                 className="h-7 w-auto"
                 src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
                 alt=""
-              />
-              <p className="sr-only">Website Title</p>
+              /> */}
+              <p className="hover:scale-150 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-xl  font-medium text-white transition-all duration-1000">Exhibix</p>
             </a>
           </div>
           <div className="hidden md:flex md:items-center md:justify-center md:gap-5">
             <Link
               aria-current="page"
-              className="hover:scale-105 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-sm  font-medium text-white-900 transition-all duration-200 "
+              className="hover:scale-150 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-sm  font-medium text-white transition-all duration-1000 "
               to="/user/ProjectListing"
             >
               Projects
             </Link>
             <Link
-              className="hover:scale-105 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-sm  font-medium text-gray-900 transition-all duration-200 "
+              className="hover:scale-150 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-sm  font-medium text-white transition-all duration-1000 "
               to="/user/AddProject"
             >
               Add Project
             </Link>
             <Link
-              className="hover:scale-105 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-sm  font-medium text-gray-900 transition-all duration-200 "
+              className="hover:scale-150 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-sm  font-medium text-white transition-all duration-1000 "
               to="/admin/AdminProfile"
             >
               Admin
             </Link>
             <Link
-              className="hover:scale-105 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-sm  font-medium text-gray-900 transition-all duration-200 "
+              className="hover:scale-150 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-sm  font-medium text-white transition-all duration-1000 "
               to="/user/UserProfile"
             >
               User Profile

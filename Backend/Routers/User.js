@@ -31,8 +31,8 @@ router.post("/authenticate", (req, res) => {
 
 //denotes a url parameter
 
-router.get("/getbyemail/:email", (req, res) => {
-  console.log(res.params.email);
+router.get("/getbymail/:email", (req, res) => {
+  console.log(req.params.email);
   Model.findOne({ email: req.params.email })
     .then((result) => {
       res.json(result);

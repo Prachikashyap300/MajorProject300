@@ -14,7 +14,7 @@ const ForgetPassword = () => {
 
   const checkMailExists = async () => {
     const res = await fetch(
-      `http://localhost:4000/user/getbyemail/${emailRef.current.value}`
+      `http://localhost:4000/user/getbymail/${emailRef.current.value}`
     );
     // console.log(res.status);
     const data = await res.json();

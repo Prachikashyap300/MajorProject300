@@ -66,9 +66,9 @@ const AddProject = () => {
   };
 
   return (
-    <section className="p-20 bg-violet-500"> 
+    <section className="p-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 transparent"> 
        <form
-      className=" m-5 p-5 bg-gray-100 rounded shadow-2xl "
+      className="hover:scale-110 m-40 mt-20 p-20 bg-gray-50/50 rounded shadow-2xl transition-all duration-1000 "
       onSubmit={AddProjectForm.handleSubmit}
     >
       <div className="space-y-12">
@@ -92,7 +92,8 @@ const AddProject = () => {
                 <input
                   id="ptitle"
                   type="text"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
+              
                   onChange={AddProjectForm.handleChange}
                   value={AddProjectForm.values.ptitle}
                 />
@@ -110,7 +111,7 @@ const AddProject = () => {
               <div className="mt-2">
                 <select
                   id="pcateogory"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
                   onChange={AddProjectForm.handleChange}
                   value={AddProjectForm.values.pcateogory}
                 >
@@ -135,8 +136,9 @@ const AddProject = () => {
               <div className="mt-2">
                 <textarea
                   id="pdescription"
+                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
+
                   rows={3}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   defaultValue={""}
                   onChange={AddProjectForm.handleChange}
                   value={AddProjectForm.values.pdescription}
@@ -157,8 +159,9 @@ const AddProject = () => {
               <div className="mt-2">
                 <input
                   id="porganisation"
+                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
+
                   type="text"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   onChange={AddProjectForm.handleChange}
                   value={AddProjectForm.values.porganisation}
                 />
@@ -167,7 +170,7 @@ const AddProject = () => {
 
             <div className="col-span-full">
               <label className="me-2 text-sm font-medium leading-6 text-gray-900">
-                Cover photo
+                Project Image
               </label>
               <span style={{ color: "red", fontSize: "8" }}>
                
