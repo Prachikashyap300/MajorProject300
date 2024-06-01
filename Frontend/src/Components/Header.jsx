@@ -122,7 +122,7 @@ const Header = () => {
         <div className="py-8 px-4 mx-20  max-w-screen-xl sm:py-16 lg:px-6">
           <div className="max-w-screen-md mb-8 lg:mb-16">
             <h2 className="mt-20 mb-4 text-4xl tracking-tight font-extrabold text-white">
-              Why Exhibix ?
+              Whyyy Exhibix ?
             </h2>
             {/* <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
         <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span> */}
