@@ -30,6 +30,7 @@ import ForgetPassword from "./Components/ForgetPassword";
 import ViewProject from "./Components/user/ViewProject";
 import User from "./Components/user";
 import AdminLogin from "./Components/AdminLogin";
+import AdminSignup from "./Components/AdminSignup";
 
 const App = () => {
   const MainLayout = () => (
@@ -59,7 +60,8 @@ const App = () => {
               <Route path="/FormDesign" element={<FormDesign />} />
               <Route path="/Contact" element={<Contact />} />
               <Route path="/AdminLogin" element={<AdminLogin />} />
-            
+              <Route path="/AdminSignup" element={ <AdminSignup/>} />
+             
               <Route path="user" element={<User />}>
                 <Route path="AddProject" element={<AddProject />} />
                 <Route path="ProjectListing" element={<ProjectListing />} />

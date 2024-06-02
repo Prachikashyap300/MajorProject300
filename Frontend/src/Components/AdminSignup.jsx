@@ -7,19 +7,19 @@ import "../App.css";
 import { Link, useNavigate } from "react-router-dom";
 import useUserContext from "../UserContext";
 
-const AdminLoginSchema = Yup.object().shape({
+const AdminSignupSchema = Yup.object().shape({
   email: Yup.string().required("Email is required"),
   password: Yup.string().required("Password is required"),
 });
 
-const AdminLogin = () => {
+const AdminSignup = () => {
   const navigate = useNavigate();
   //for logout
 
   const { setLoggedIn } = useUserContext();
 
   // step 1: formik initialization
-  const AdminloginForm = useFormik({
+  const AdminSignupForm = useFormik({
     initialValues: {
       email: "",
       password: "",
@@ -49,14 +49,14 @@ const AdminLogin = () => {
         enqueueSnackbar("Login failed", { variant: "error" });
       }
     },
-    validationSchema: AdminLoginSchema,
+    validationSchema: AdminSignupSchema,
   });
   return (
     <section className="vh-100 flex items-center justify-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 transparent">
       <div className="mt-20 w-2/5">
         <form
           className="hover:scale-110 p-8 rounded shadow-2xl bg-gray-50/50 transition-all duration-1000"
-          onSubmit={AdminloginForm.handleSubmit}
+          onSubmit={AdminSignupForm.handleSubmit}
         >
           <div className="space-y-12 mb-5">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl">
@@ -69,15 +69,15 @@ const AdminLogin = () => {
                   Email address
                 </label>
                 <span style={{ color: "red", fontSize: "8" }}>
-                  {AdminloginForm.touched.email && AdminloginForm.errors.email}
+                  {AdminSignupForm.touched.email && AdminSignupForm.errors.email}
                 </span>
                 <div className="mt-1">
                   <input
                     type="email"
                     id="email"
                     className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
-                    onChange={AdminloginForm.handleChange}
-                    value={AdminloginForm.values.email}
+                    onChange={AdminSignupForm.handleChange}
+                    value={AdminSignupForm.values.email}
                   />
                 </div>
               </div>
@@ -86,15 +86,15 @@ const AdminLogin = () => {
                   Password
                 </label>
                 <span style={{ color: "red", fontSize: "8" }}>
-                  {AdminloginForm.touched.password && AdminloginForm.errors.password}
+                  {AdminSignupForm.touched.password && AdminSignupForm.errors.password}
                 </span>
                 <div className="mt-1">
                   <input
                     type="password"
                     id="password"
                     className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
-                    onChange={AdminloginForm.handleChange}
-                    value={AdminloginForm.values.password}
+                    onChange={AdminSignupForm.handleChange}
+                    value={AdminSignupForm.values.password}
                   />
                 </div>
               </div>
@@ -126,4 +126,4 @@ const AdminLogin = () => {
   );
 };
 
-export default AdminLogin;
+export default AdminSignup;
