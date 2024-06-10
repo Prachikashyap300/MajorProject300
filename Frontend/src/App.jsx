@@ -74,6 +74,7 @@ const App = () => {
                 <Route path="ManageUser" element={<ManageUser />} />
                 <Route path="Project" element={<Project />} />
                 <Route path="AdminProfile" element={<AdminProfile />} />
+                <Route path="ViewProject" element={<ViewProject />} />
               </Route>
             </Routes>
           </UserProvider>

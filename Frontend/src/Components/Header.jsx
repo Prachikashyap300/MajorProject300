@@ -91,7 +91,7 @@ const Header = () => {
                   <h2 className="my-48 mx-auto md:px-6 mb-12 text-white  text- 5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
                     Are you ready <br />
                     <span className="text-primary dark:text-primary-400">
-                      for an adventure?
+                      to showcase?
                     </span>
                   </h2>
                   <h5 >
@@ -106,7 +106,7 @@ const Header = () => {
                   onClick={handleclick}
                   className=" mt-12 text-white text-lg cursur-pointer bg-blue-500 p-1 rounded-md px-4 py-3 hover:bg-blue-700"
                 >
-                  <Link to="/AddProject">Upload Project</Link>
+                  <Link to="/user/AddProject">Upload Project</Link>
                 </button>
                 </div>
               </div>
@@ -118,17 +118,17 @@ const Header = () => {
       </header>
 
       {/* Section 1 */}
-      <section className="">
+      <section className="" id="#About">
         <div className="py-8 px-4 mx-20  max-w-screen-xl sm:py-16 lg:px-6">
           <div className="max-w-screen-md mb-8 lg:mb-16">
             <h2 className="mt-20 mb-4 text-4xl tracking-tight font-extrabold text-white">
-              Whyyy Exhibix ?
+              Why Exhibix ?
             </h2>
             {/* <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
         <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span> */}
             <p className="text-gray-300 sm:text-xl ">
-              Here at Flowbite we focus on markets where technology, innovation,
-              and capital can unlock long-term value and drive economic growth.
+              Here at Exhibix we focus on projects where technology, innovation,
+              and talent can unlock futuristic growth.
             </p>
           </div>
           <div className="container space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
@@ -147,7 +147,7 @@ const Header = () => {
                   />
                 </svg>
               </div>
-              <h3 className="mb-2 text-white text-xl font-bold ">Marketing</h3>
+              <h3 className="mb-2 text-white text-xl font-bold ">Central hub</h3>
               <p className="text-gray-300 ">
                 Plan it, create it, launch it. Collaborate seamlessly with all
                 the organization and hit your marketing goals every month with
@@ -165,7 +165,7 @@ const Header = () => {
                   <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold text-white">Legal</h3>
+              <h3 className="mb-2 text-xl font-bold text-white">Highlight</h3>
               <p className="text-gray-300">
                 Protect your organization, devices and stay compliant with our
                 structured workflows and custom permissions made for you.
@@ -188,14 +188,14 @@ const Header = () => {
                 </svg>
               </div>
               <h3 className="mb-2 text-xl font-bold text-white">
-                Business Automation
+                Showcase
               </h3>
               <p className="text-gray-300">
                 Auto-assign tasks, send Slack messages, and much more. Now power
                 up with hundreds of new templates to help you get started.
               </p>
             </div>
-            <div className="hover:bg-black/50 bg-black/50 hover:scale-110 transition duration-1000 p-4 hover:border border-0 rounded-2xl shadow">
+            {/* <div className="hover:bg-black/50 bg-black/50 hover:scale-110 transition duration-1000 p-4 hover:border border-0 rounded-2xl shadow">
               <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                 <svg
                   className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
@@ -261,7 +261,7 @@ const Header = () => {
                 structured workflows built for all efficient teams and
                 individual.
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -271,22 +271,18 @@ const Header = () => {
         <div className="mt-20  gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
           <div className=" font-light text-white sm:text-lg ">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-white">
-              We didn't reinvent the wheel
+              Our AIM
             </h2>
             <p className="mb-4">
-              We are strategists, designers and developers. Innovators and
-              problem solvers. Small enough to be simple and quick, but big
-              enough to deliver the scope you want at the pace you need. Small
-              enough to be simple and quick, but big enough to deliver the scope
-              you want at the pace you need.
+            We want to celebrate the great work our students do in different subjects. But student projects are all over the place! They,re in different departments, and it’s hard to see the big picture of what students are creating.As a result, awesome projects often don’t get noticed. Students don’t feel recognized.
+            The absence of a centralized platform means that many excellent projects go unnoticed, diminishing the recognition and sense of accomplishment among students.
+            Exhiix aims to provide a dedicated platform for university administrators to showcase and recognize the best projects created by their students. The platform will act as a centralized hub for displaying and promoting outstanding academic achievements. 
+
             </p>
-            <p>
-              We are strategists, designers and developers. Innovators and
-              problem solvers. Small enough to be simple and quick.
-            </p>
+          
           </div>
           <div className="grid grid-cols-2 gap-4 mt-8">
-            {/* <img
+            <img
               className="w-full rounded-lg hover:shadow-2xl hover:shadow-white "
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
               alt="office content 1"
@@ -295,7 +291,7 @@ const Header = () => {
               className="mt-4 w-full lg:mt-10 rounded-lg"
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
               alt="office content 2"
-            /> */}
+            />
           </div>
         </div>
       </section>
@@ -317,7 +313,7 @@ const Header = () => {
                     className="my-2 py-2 px-4 rounded-md border rounded shadow w-full md:w-1/2 md:mr-2 outline-none focus:ring-2 focus:ring-blue-600"
                     placeholder="Name"
                     onChange={contactForm.handleChange}
-                    value={contactForm.values.ptitle}
+                    value={contactForm.values.name}
                   />
                   <input
                     id="email"
@@ -325,7 +321,7 @@ const Header = () => {
                     className="my-2 py-2 px-4 rounded-md border rounded shadow w-full md:w-1/2 md:ml-2 outline-none focus:ring-2 focus:ring-blue-600"
                     placeholder="Email"
                     onChange={contactForm.handleChange}
-                  value={contactForm.values.ptitle}
+                  value={contactForm.values.email}
                   />
                 </div>
                 <input
@@ -334,7 +330,7 @@ const Header = () => {
                   placeholder="Subject"
                   className="my-2 py-2 px-4 rounded-mdborder rounded shadow w-full outline-none focus:ring-2 focus:ring-blue-600"
                   onChange={contactForm.handleChange}
-                  value={contactForm.values.ptitle}
+                  value={contactForm.values.subject}
                 />
                 <textarea
                   id="message"
@@ -342,6 +338,8 @@ const Header = () => {
                   placeholder="Say Something"
                   className="my-2 py-2 px-4 rounded-md border rounded shadow w-full outline-none focus:ring-2 focus:ring-blue-600"
                   defaultValue={""}
+                  onChange={contactForm.handleChange}
+                  value={contactForm.values.message}
                   
                 />
               </div>
@@ -361,9 +359,9 @@ const Header = () => {
           {" "}
           {/* Changed to 4 columns */}
           <div>
-            <h2 className="text-lg font-semibold mb-2">About BBD Creators</h2>
+            <h2 className="text-lg font-semibold mb-2">About Exhibix</h2>
             <p className="text-sm">
-              BBD Creators is dedicated to building innovative solutions that
+              Exhibix is dedicated to building innovative solutions that
               make a difference. Join us on our journey to create impactful
               technology.
             </p>
@@ -371,7 +369,7 @@ const Header = () => {
           <div>
             <h2 className="text-lg font-semibold mb-2">Contact Us</h2>
             <ul className="text-sm">
-              <li>Email: contact@bbdcreators.com</li>
+              <li>Email: contact@exhibix.com</li>
               <li>Phone: +123 456 7890</li>
               <li>Address: 123 Creator St, Innovation City</li>
             </ul>
@@ -406,7 +404,7 @@ const Header = () => {
           </div>
         </div>
         <div className="text-center text-sm mt-4">
-          © {new Date().getFullYear()} BBD Creators. All rights reserved.
+          © {new Date().getFullYear()} Exhibix. All rights reserved.
         </div>
       </footer>
     </div>

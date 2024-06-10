@@ -1,6 +1,7 @@
 import React from "react";
 import useUserContext from "../UserContext";
 import { Link } from "react-router-dom";
+import Logo from "../assets/logo_blue.png";
 
 const MenuBar = () => {
 
@@ -45,12 +46,12 @@ const MenuBar = () => {
         <div className="flex items-center justify-between">
           <div className="flex shrink-0">
             <a aria-current="page" className="flex items-center" href="/">
-              {/* <img
-                className="h-7 w-auto"
-                src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+              <img
+                className="h-14 w-auto"
+                src={Logo}
                 alt=""
-              /> */}
-              <p className="hover:scale-150 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-xl  font-medium text-white transition-all duration-1000">Exhibix</p>
+              />
+              {/* <p className="hover:scale-150 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-xl  font-medium text-white transition-all duration-1000">Exhibix</p> */}
             </a>
           </div>
           <div className="hidden md:flex md:items-center md:justify-center md:gap-5">
@@ -65,20 +66,20 @@ const MenuBar = () => {
               className="hover:scale-150 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-sm  font-medium text-white transition-all duration-1000 "
               to="/user/AddProject"
             >
-              Add Project
+             Upload Project
             </Link>
-            <Link
+            {/* <Link
               className="hover:scale-150 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-sm  font-medium text-white transition-all duration-1000 "
               to="/admin/AdminProfile"
             >
               Admin
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               className="hover:scale-150 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-sm  font-medium text-white transition-all duration-1000 "
               to="/user/UserProfile"
             >
               User Profile
-            </Link>
+            </Link> */}
           </div>
         {
           showLoggedin()

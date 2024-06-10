@@ -47,8 +47,8 @@ const ProjectListing = () => {
     <section className="flex items-center justify-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 transparent">
       <div className="mt-20">
         <div class="text-center p-10">
-          <h1 class="font-bold text-4xl mb-4 text-white">Responsive Product card grid</h1>
-          <h1 class="text-3xl mb-4 text-white">Tailwind CSS</h1>
+          {/* <h1 class="font-bold text-4xl mb-4 text-white">Responsive Product card grid</h1> */}
+          {/* <h1 class="text-3xl mb-4 text-white">Tailwind CSS</h1> */}
           <form className="max-w-lg mx-auto">
             <div className="flex">
               
@@ -151,7 +151,7 @@ const ProjectListing = () => {
           </form>
         </div>
 
-        {/* <!-- ✅ Grid Section - Starts Here 👇 --> */}
+    
         <section
           id="Projects"
           class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5"
@@ -161,14 +161,7 @@ const ProjectListing = () => {
 
         <div class="text-center text-white py-10 px-10">
           <h2 class="font-bold text-2xl md:text-4xl mb-4">
-            Thanks to{" "}
-            <a
-              href="https://unsplash.com/@nixcreative"
-              class="underline font-black"
-            >
-              Tyler Nix
-            </a>{" "}
-            for those AMAZING product images!
+            Keep up the good work!
           </h2>
         </div>
       </div>

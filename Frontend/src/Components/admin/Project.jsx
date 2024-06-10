@@ -65,7 +65,7 @@ const Project = () => {
   };
 
   return (
-    <section className="p-20 bg-violet-500"> 
+    <section className="p-10"> 
     <form
       className=" m-5 p-5 bg-gray-100 rounded shadow "
       onSubmit={AddProjectForm.handleSubmit}
