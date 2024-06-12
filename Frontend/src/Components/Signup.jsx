@@ -12,7 +12,7 @@ const SignupSchema = Yup.object().shape({
   email: Yup.string().required("** Email is required"),
   college: Yup.string().required("** College is required"),
   course: Yup.string().required(" ** Course is required"),
-  uimage: Yup.string().required("** Image is required"),
+  // uimage: Yup.string().required("** Image is required"),
   password: Yup.string()
     .required("Password is required")
     .matches(
@@ -32,7 +32,7 @@ const Signup = () => {
       email: "",
       college: "",
       course: "",
-      uimage: "",
+      // uimage: "",
       password: "",
       cpassword: "",
     },

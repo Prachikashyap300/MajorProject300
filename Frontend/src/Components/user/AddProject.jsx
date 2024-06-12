@@ -9,7 +9,7 @@ const AddProjectSchema = Yup.object().shape({
   ptitle: Yup.string().required("Title is required**"),
   pcateogory: Yup.string().required("Cateogory is required**"),
   pdescription: Yup.string().required("Description is required**"),
-  porganisation: Yup.string().required("Organisation name is required**"),
+  // porganisation: Yup.string().required("Organisation name is required**"),
   // pimage: Yup.string().required("Image  is required**"),
 });
 
@@ -21,7 +21,7 @@ const AddProject = () => {
       ptitle: "",
       pcateogory: "",
       pdescription: "",
-      porganisation: "",
+      // porganisation: "",
       pimage: "",
     },
     onSubmit: async (values, action) => {
@@ -119,6 +119,7 @@ const AddProject = () => {
                   value={AddProjectForm.values.pcateogory}
                 >
                   {/* <option>Reading /Writing</option> */}
+                  <option>Select Cateogory </option>
                   <option>Information technology </option>
                   <option>Design </option>
                   <option>Management </option>

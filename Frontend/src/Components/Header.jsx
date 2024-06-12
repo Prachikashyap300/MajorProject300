@@ -154,11 +154,9 @@ const Header = () => {
                   />
                 </svg>
               </div>
-              <h3 className="mb-2 text-white text-xl font-bold ">Central hub</h3>
+              <h3 className="mb-2 text-white text-xl font-bold ">Academic Recognition</h3>
               <p className="text-gray-300 ">
-                Plan it, create it, launch it. Collaborate seamlessly with all
-                the organization and hit your marketing goals every month with
-                our marketing plan.
+              Exhibix is to facilitate the recognition of outstanding student projects, thereby fostering a culture of academic excellence and celebrating the diverse achievements across various departments.
               </p>
             </div>
             <div className="hover:bg-black/50 bg-black/50 hover:scale-110 transition duration-1000 p-4 hover:border border-0 rounded-2xl shadow">
@@ -172,10 +170,9 @@ const Header = () => {
                   <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold text-white">Highlight</h3>
+              <h3 className="mb-2 text-xl font-bold text-white">Promote Interdisciplinary Collaboration</h3>
               <p className="text-gray-300">
-                Protect your organization, devices and stay compliant with our
-                structured workflows and custom permissions made for you.
+              Exhibix aims to promote interdisciplinary collaboration by providing a platform where students from different departments can showcase their projects, fostering cross-pollination of ideas and innovation.
               </p>
             </div>
             <div className="hover:bg-black/50 bg-black/50 hover:scale-110 transition duration-1000 p-4 hover:border border-0 rounded-2xl shadow">
@@ -195,11 +192,10 @@ const Header = () => {
                 </svg>
               </div>
               <h3 className="mb-2 text-xl font-bold text-white">
-                Showcase
+              Empower Student Engagement
               </h3>
               <p className="text-gray-300">
-                Auto-assign tasks, send Slack messages, and much more. Now power
-                up with hundreds of new templates to help you get started.
+              Empower student engagement by offering a centralized space where their work can be easily accessed and appreciated, motivating them to strive for excellence and contributing positively to their academic journey.
               </p>
             </div>
             
@@ -210,7 +206,7 @@ const Header = () => {
       {/* section2 */}
       <section className=" ">
         <div className="mt-20  gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-          <div className=" font-light text-white sm:text-lg ">
+          <div className=" text-white sm:text-lg ">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-white">
               Our AIM
             </h2>
@@ -218,13 +214,11 @@ const Header = () => {
             We want to celebrate the great work our students do in different subjects. But student projects are all over the place! They,re in different departments, and it’s hard to see the big picture of what students are creating.As a result, awesome projects often don’t get noticed. Students don’t feel recognized.
             The absence of a centralized platform means that many excellent projects go unnoticed, diminishing the recognition and sense of accomplishment among students.
             Exhiix aims to provide a dedicated platform for university administrators to showcase and recognize the best projects created by their students. The platform will act as a centralized hub for displaying and promoting outstanding academic achievements. 
-
             </p>
-          
           </div>
           <div className="grid grid-cols-2 gap-4 mt-8">
             <img
-              className="w-full rounded-lg hover:shadow-2xl hover:shadow-white "
+              className="w-full rounded-lg"
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
               alt="office content 1"
             />
@@ -241,7 +235,7 @@ const Header = () => {
       <div className="h-screen">
         <div className="pt-5 md:pt-20">
           <div className="mt-20 mb-20 p-4 md:p-8">
-            <h1 className="text-white text-center pb-8 font-light  text-4xl md:text-5xl lg:text-6xl">
+            <h1 className="text-white text-center pb-8   text-4xl md:text-5xl lg:text-6xl">
               Get in touch
             </h1>
             <form className="flex flex-col items-center" onSubmit={contactForm.handleSubmit}>
@@ -286,8 +280,8 @@ const Header = () => {
               </div>
               <button
                 type="submit"
-                className="border-2 text-md mt-5 rounded-md py-2 px-4 bg-blue-600 hover:bg-blue-700 text-gray-100 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-600"
-              >
+                className="mt-3 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                >
                 Send Message
               </button>
             </form>

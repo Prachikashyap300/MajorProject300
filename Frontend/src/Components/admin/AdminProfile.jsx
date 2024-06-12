@@ -1,13 +1,13 @@
 import React from "react";
 import { ReactTyped } from "react-typed";
-import ManageUser from "./ManageUser";
+// import ManageUser from "./ManageUser";
 
 const AdminProfile = () => {
   return (
     <div>
       <div>
-      <ManageUser/>
-        {/* <div className="text-center mt-5">
+      {/* <ManageUser/> */}
+        <div className="text-center mt-5">
           <h1 >
             <ReactTyped
               className="text-white text-3xl "
@@ -16,7 +16,7 @@ const AdminProfile = () => {
               loop
             />
           </h1>
-        </div> */}
+        </div>
 
           
       </div>
