@@ -66,7 +66,7 @@ const AddProject = () => {
   };
 
   return (
-    <section className="p-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 "> 
+    <section className="p-20 bg-gradient-to-r from-transparent via-blue-200 to-pink-100"> 
        <form
       className="hover:scale-105 m-40 mt-20 p-20 bg-white rounded shadow-2xl transition-all duration-1000 "
       onSubmit={AddProjectForm.handleSubmit}

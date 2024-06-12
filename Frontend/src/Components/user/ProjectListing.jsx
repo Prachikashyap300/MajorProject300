@@ -44,8 +44,8 @@ const ProjectListing = () => {
     ));
   };
   return (
-    <section className="min-h-screen flex items-center justify-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 transparent">
-      <div className="mt-20">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-transparent via-blue-200 to-pink-100 transparent">
+      <div className="mt-40">
          
         <section
           id="Projects"
@@ -54,7 +54,7 @@ const ProjectListing = () => {
           {displayProjects()}
         </section>
 
-        <div class="text-center text-white py-10 px-10">
+        <div class="text-center text-dark py-10 px-10">
           <h2 class="font-bold text-2xl md:text-4xl mb-4">
             Keep up the good work!
           </h2>

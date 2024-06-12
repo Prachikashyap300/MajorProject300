@@ -46,9 +46,8 @@
 -- 
 /*Start BackGround Animation 
 */
-.UPButton{
-	z-index: 999;
-}
+/* .background: rgb(174,199,238); */
+/* .background: radial-gradient(circle, rgba(174,199,238,1) 0%, rgba(255,255,255,1) 100%); */
 .area {
 	/* background: #070d42;
 	background: -webkit-linear-gradient(to left, #6669a5, #020424); */

@@ -69,7 +69,7 @@ const ForgetPassword = () => {
     // console.log(res.status);
     if (res.status === 200) {
       enqueueSnackbar("Password updated successfully", { variant: "success" });
-      navigate("/main/login");
+      navigate("/Login");
     } else {
       enqueueSnackbar("Something went wrong", { variant: "error" });
     }

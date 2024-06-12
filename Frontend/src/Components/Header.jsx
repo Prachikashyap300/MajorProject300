@@ -66,7 +66,7 @@ const Header = () => {
   }; 
   
   return (
-     <div className="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-violet-700 via-violet-900 to-stone-900 transparent">
+     <div className="bg-gradient-to-r from-transparent via-blue-200 to-pink-100 ">
       
       {/*Start Background Animation Body*/}
       <div className="area">
@@ -94,7 +94,7 @@ const Header = () => {
             <section className="mb-32 text-center">
               <div className="flex justify-center">
                 <div className="max-w-[800px]">
-                  <h2 className="my-48 mx-auto md:px-6 mb-12 text-white  text- 5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
+                  <h2 className="my-48 mx-auto md:px-6 mb-12 text-dark  text- 5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
                     Are you ready <br />
                     <span className="text-primary dark:text-primary-400">
                       to showcase?
@@ -102,7 +102,7 @@ const Header = () => {
                   </h2>
                   <h5 >
                   <ReactTyped
-                    className="text-white text-3xl "
+                    className="text-dark text-3xl "
                     strings={["Innovate. Create. Showcase"]}
                     typeSpeed={100}
                     loop
@@ -128,12 +128,12 @@ const Header = () => {
       <section className="" id="#About">
         <div className="py-8 px-4 mx-20  max-w-screen-xl sm:py-16 lg:px-6">
           <div className="max-w-screen-md mb-8 lg:mb-16">
-            <h2 className="mt-20 mb-4 text-4xl tracking-tight font-extrabold text-white">
+            <h2 className="mt-20 mb-4 text-4xl tracking-tight font-extrabold text-dark">
               Why Exhibix ?
             </h2>
             {/* <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
         <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span> */}
-            <p className="text-gray-300 sm:text-xl ">
+            <p className="text-dark sm:text-xl ">
               Here at Exhibix we focus on projects where technology, innovation,
               and talent can unlock futuristic growth.
             </p>
@@ -207,10 +207,10 @@ const Header = () => {
       <section className=" ">
         <div className="mt-20  gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
           <div className=" text-white sm:text-lg ">
-            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-white">
+            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-dark">
               Our AIM
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 text-dark">
             We want to celebrate the great work our students do in different subjects. But student projects are all over the place! They,re in different departments, and it’s hard to see the big picture of what students are creating.As a result, awesome projects often don’t get noticed. Students don’t feel recognized.
             The absence of a centralized platform means that many excellent projects go unnoticed, diminishing the recognition and sense of accomplishment among students.
             Exhiix aims to provide a dedicated platform for university administrators to showcase and recognize the best projects created by their students. The platform will act as a centralized hub for displaying and promoting outstanding academic achievements. 
@@ -235,7 +235,7 @@ const Header = () => {
       <div className="h-screen">
         <div className="pt-5 md:pt-20">
           <div className="mt-20 mb-20 p-4 md:p-8">
-            <h1 className="text-white text-center pb-8   text-4xl md:text-5xl lg:text-6xl">
+            <h1 className="text-dark text-center pb-8 font-extrabold   text-4xl ">
               Get in touch
             </h1>
             <form className="flex flex-col items-center" onSubmit={contactForm.handleSubmit}>
@@ -289,7 +289,7 @@ const Header = () => {
         </div>
       </div>
       {/* footer */}
-      <footer className="p-6 text-white mt-40">
+      <footer className="bg-black p-10 text-white mt-40">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
           {" "}
           {/* Changed to 4 columns */}

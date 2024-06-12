@@ -74,7 +74,7 @@ const Signup = () => {
     });
   };
   return (
-    <section className="flex items-center justify-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 ">
+    <section className="flex items-center justify-center bg-gradient-to-r from-transparent via-blue-200 to-pink-100 ">
       <div className="mt-20">
       <form
         className="hover:scale-105 m-5 p-5  rounded shadow-2xl bg-white transition-all duration-1000"

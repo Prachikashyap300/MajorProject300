@@ -57,13 +57,13 @@ const MenuBar = () => {
           <div className="hidden md:flex md:items-center md:justify-center md:gap-5">
             <Link
               aria-current="page"
-              className="hover:scale-110   inline-block rounded-lg px-2 py-1 text-lg  font-medium text-primary transition-all duration-1000 "
+              className="hover:scale-110   inline-block rounded-lg px-2 py-1 text-lg  font-medium text-dark transition-all duration-1000 "
               to="/user/ProjectListing"
             >
               Projects
             </Link>
             <Link
-              className="hover:scale-110  inline-block rounded-lg px-2 py-1 text-lg  font-medium text-primary transition-all duration-1000 "
+              className="hover:scale-110  inline-block rounded-lg px-2 py-1 text-lg  font-medium text-dark transition-all duration-1000 "
               to="/user/AddProject"
             >
              Upload Project

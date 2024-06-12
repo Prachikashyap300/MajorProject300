@@ -52,7 +52,7 @@ const Login = () => {
     validationSchema: LoginSchema,
   });
   return (
-    <section className="vh-100 flex items-center justify-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 ">
+    <section className="vh-100 flex items-center justify-center bg-gradient-to-r from-transparent via-blue-200 to-pink-100 ">
       <div className="mt-20 w-2/5">
         <form
           className="hover:scale-110 p-8 rounded shadow-2xl bg-white transition-all duration-1000"
