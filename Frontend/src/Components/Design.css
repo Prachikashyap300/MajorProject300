@@ -46,13 +46,16 @@
 -- 
 /*Start BackGround Animation 
 */
+.UPButton{
+	z-index: 999;
+}
 .area {
 	/* background: #070d42;
 	background: -webkit-linear-gradient(to left, #6669a5, #020424); */
 	width: 100%;
 	height: 100vh;
 	position: absolute;
-	z-index: auto;
+	z-index: 1;
 }
 
 .circles {

@@ -66,16 +66,19 @@ const AddProject = () => {
   };
 
   return (
-    <section className="p-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 transparent"> 
+    <section className="p-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 "> 
        <form
-      className="hover:scale-110 m-40 mt-20 p-20 bg-gray-50/50 rounded shadow-2xl transition-all duration-1000 "
+      className="hover:scale-105 m-40 mt-20 p-20 bg-white rounded shadow-2xl transition-all duration-1000 "
       onSubmit={AddProjectForm.handleSubmit}
     >
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">
+        <h1 className="text-xl font-bold leading-tight tracking-tight text-dark md:text-2xl">
             Project Details
-          </h2>
+          </h1>
+          {/* <h2 className="text-base font-semibold leading-7 text-dark">
+            Project Details
+          </h2> */}
           <p className="mt-1 text-sm leading-6 text-gray-600">
             Add the details of your project
           </p>
@@ -115,15 +118,17 @@ const AddProject = () => {
                   onChange={AddProjectForm.handleChange}
                   value={AddProjectForm.values.pcateogory}
                 >
-                  <option>Reading/ Writing</option>
+                  {/* <option>Reading /Writing</option> */}
                   <option>Information technology </option>
                   <option>Design </option>
                   <option>Management </option>
-                  <option>Problem solving/ desicion making </option>
-                  <option>Real world authentic projects </option>
+                  {/* <option>Problem solving/ desicion making </option>
+                  <option>Real world authentic projects </option> */}
                 </select>
               </div>
             </div>
+
+            
 
             <div className="col-span-full">
               <label className="me-2 text-sm font-medium leading-6 text-gray-900">
@@ -144,12 +149,10 @@ const AddProject = () => {
                   value={AddProjectForm.values.pdescription}
                 />
               </div>
-              <p className="mt-3 text-sm leading-6 text-gray-600">
-                Describe your Project.
-              </p>
+              
             </div>
 
-            <div className="sm:col-span-4">
+            {/* <div className="sm:col-span-4">
               <label className="me-2 text-sm font-medium leading-6 text-gray-900">
                 Organisation
               </label>
@@ -166,7 +169,7 @@ const AddProject = () => {
                   value={AddProjectForm.values.porganisation}
                 />
               </div>
-            </div>
+            </div> */}
 
             <div className="col-span-full">
               <label className="me-2 text-sm font-medium leading-6 text-gray-900">

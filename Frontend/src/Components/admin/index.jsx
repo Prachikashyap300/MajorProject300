@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 
 const Admin = () => {
   return (
-    <div className="vh-100 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 transparent">
+    <div className="min-h-screen ">
       <div class=" grid grid-rows-3 grid-flow-col ">
         <div class="row-span-3 ...">
           <Sidebar/>
@@ -19,3 +19,5 @@ const Admin = () => {
 };
 
 export default Admin;
+
+// bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 transparent

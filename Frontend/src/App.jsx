@@ -31,6 +31,7 @@ import ViewProject from "./Components/user/ViewProject";
 import User from "./Components/user";
 import AdminLogin from "./Components/AdminLogin";
 import AdminSignup from "./Components/AdminSignup";
+import ManageFeedback from "./Components/admin/ManageFeedback";
 
 const App = () => {
   const MainLayout = () => (
@@ -72,6 +73,7 @@ const App = () => {
               <Route path="/admin" element={<Admin />}>
                 <Route path="ManageProject" element={<ManageProject />} />
                 <Route path="ManageUser" element={<ManageUser />} />
+                <Route path="ManageFeedback" element={<ManageFeedback/>} />
                 <Route path="Project" element={<Project />} />
                 <Route path="AdminProfile" element={<AdminProfile />} />
                 <Route path="ViewProject" element={<ViewProject />} />

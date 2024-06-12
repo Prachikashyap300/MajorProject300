@@ -74,14 +74,14 @@ const Signup = () => {
     });
   };
   return (
-    <section className="flex items-center justify-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 transparent">
+    <section className="flex items-center justify-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 ">
       <div className="mt-20">
       <form
-        className="hover:scale-110 m-5 p-5  rounded shadow-2xl bg-gray-50/50 transition-all duration-1000"
+        className="hover:scale-105 m-5 p-5  rounded shadow-2xl bg-white transition-all duration-1000"
         onSubmit={signupForm.handleSubmit}
       >
         <div className="space-y-12 mb-5">
-          <h1 className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl">
+          <h1 className="text-xl font-bold leading-tight tracking-tight text-dark md:text-2xl">
             Create an account
           </h1>
 
@@ -157,9 +157,13 @@ const Signup = () => {
                   onChange={signupForm.handleChange}
                   value={signupForm.values.college}
                 >
-                  <option>MGCPS</option>
-                  <option>Canada</option>
-                  <option>Mexico</option>
+                  <option>Select your college</option>
+                  <option>Modern Girls College Of Professional Studies</option>
+                  <option>IIML - Indian Institute of Management, Lucknow</option>
+                  <option>BBD</option>
+                  <option>Sri Ramswaroop college</option>
+                  <option>IT College</option>
+                  <option>University of Lucknow</option>
                 </select>
               </div>
             </div>
@@ -222,7 +226,7 @@ const Signup = () => {
                 />
               </div>
             </div>
-            <div className="col-span-full">
+            {/* <div className="col-span-full">
               <label className="me-2 text-sm font-medium leading-6 text-gray-900">
                 Profile photo
               </label>
@@ -253,7 +257,7 @@ const Signup = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

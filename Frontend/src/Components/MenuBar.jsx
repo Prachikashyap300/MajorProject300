@@ -13,7 +13,7 @@ const MenuBar = () => {
      return(
       <div className="flex items-center justify-end gap-3">
       <button
-        className="hidden items-center justify-center rounded-xl bg-red-500 px-3 py-2 text-sm font-semibold text-red-800 shadow-sm ring-1 ring-inset ring-red-300 transition-all duration-150 hover:bg-red-500 sm:inline-flex"
+        className="hidden items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-red-800 shadow-sm ring-1 ring-inset ring-red-300 transition-all duration-150 hover:bg-red-500 sm:inline-flex"
        onClick={logout}
       >
         Logout
@@ -57,13 +57,13 @@ const MenuBar = () => {
           <div className="hidden md:flex md:items-center md:justify-center md:gap-5">
             <Link
               aria-current="page"
-              className="hover:scale-150 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-sm  font-medium text-white transition-all duration-1000 "
+              className="hover:scale-110   inline-block rounded-lg px-2 py-1 text-lg  font-medium text-primary transition-all duration-1000 "
               to="/user/ProjectListing"
             >
               Projects
             </Link>
             <Link
-              className="hover:scale-150 hover:shadow-xl inline-block rounded-lg px-2 py-1 text-sm  font-medium text-white transition-all duration-1000 "
+              className="hover:scale-110  inline-block rounded-lg px-2 py-1 text-lg  font-medium text-primary transition-all duration-1000 "
               to="/user/AddProject"
             >
              Upload Project

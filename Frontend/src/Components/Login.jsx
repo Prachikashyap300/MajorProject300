@@ -52,14 +52,14 @@ const Login = () => {
     validationSchema: LoginSchema,
   });
   return (
-    <section className="vh-100 flex items-center justify-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 transparent">
+    <section className="vh-100 flex items-center justify-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500 via-violet-900 to-stone-900 ">
       <div className="mt-20 w-2/5">
         <form
-          className="hover:scale-110 p-8 rounded shadow-2xl bg-gray-50/50 transition-all duration-1000"
+          className="hover:scale-110 p-8 rounded shadow-2xl bg-white transition-all duration-1000"
           onSubmit={loginForm.handleSubmit}
         >
           <div className="space-y-12 mb-5">
-            <h1 className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl">
+            <h1 className="text-xl font-bold leading-tight tracking-tight text-dark md:text-2xl">
               Log into your account
             </h1>
 

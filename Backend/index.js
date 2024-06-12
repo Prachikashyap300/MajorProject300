@@ -6,6 +6,8 @@ const cors = require('cors');
 const userRouter = require('./Routers/User');
 const projectRouter = require('./Routers/Project');
 const utilRouter = require('./Routers/Util');
+const contactRouter = require('./Routers/Contact');
+
 
 // cors
 
@@ -18,6 +20,8 @@ app.use(express.json());
 app.use('/user', userRouter); 
 app.use('/project', projectRouter);
 app.use('/util', utilRouter);
+app.use('/contact', contactRouter);
+
 app.use(express.static('./static/uploads'));
 
 app.listen(port, () => {
