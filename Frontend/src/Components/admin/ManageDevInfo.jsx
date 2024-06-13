@@ -1,7 +1,7 @@
 import { enqueueSnackbar } from "notistack";
 import React, { useState, useEffect } from "react";
 
-const ManageProject = () => {
+const ManageDevInfo = () => {
   const [Data, setData] = useState([]);
 
   const fetchProjectData = async () => {
@@ -57,31 +57,9 @@ const ManageProject = () => {
   const displayProject = () => {
     return Data.map((project) => (
       <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <td className="px-6 py-4">{project.ptitle}</td>
-        <td className="px-6 py-4">{project.pdescription}</td>
-        <td className="px-6 py-4">
-          
-          <button
-            onClick={() => {
-              deleteProject(project._id);
-            }}
-            className="btn btn-danger"
-          >
-            Delete
-          </button>
-        </td>
-        <td className="px-6 py-4">
-          <button
-            onClick={() => {
-              updateVerified(project._id);
-            }}
-            className="btn btn-danger"
-          >
-          
-            {project.verified ? "Verified" : "Verify"}
-          </button>
-        </td>
-        
+        <td className="px-6 py-4">{project.devname}</td>
+        <td className="px-6 py-4">{project.devintro}</td>
+        <td className="px-6 py-4">{project.devgithublink}</td>  
       </tr>
     ));
   };
@@ -91,13 +69,12 @@ const ManageProject = () => {
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th scope="col" className="px-6 py-3">
-              Project Title
+              Developer Name
             </th>
             <th scope="col" className="px-6 py-3">
-              Description
+              Introduction
             </th>
-            <th scope="col" className="px-6 py-3"></th>
-            <th scope="col" className="px-6 py-3"></th>
+            <th scope="col" className="px-6 py-3">Github Link</th>
           </tr>
         </thead>
         <tbody>{displayProject()}</tbody>
@@ -162,4 +139,4 @@ const ManageProject = () => {
   );
 };
 
-export default ManageProject;
+export default ManageDevInfo;

@@ -11,7 +11,12 @@ const AddProjectSchema = Yup.object().shape({
   pdescription: Yup.string().required("Description is required**"),
   // porganisation: Yup.string().required("Organisation name is required**"),
   // pimage: Yup.string().required("Image  is required**"),
+  devname: Yup.string().required("Developer name is required"),
+  devintro: Yup.string().required("Introductio is required"),
+  devgithublink: Yup.string().required("GitHub Link is required"),
+  // devprofilimage: Yup.string().required("Profile Image is required")
 });
+
 
 const AddProject = () => {
   const [file, setSelFile] = useState([]);
@@ -23,6 +28,10 @@ const AddProject = () => {
       pdescription: "",
       // porganisation: "",
       pimage: "",
+      devname: "",
+      devintro: "",
+      devgithublink: "",
+      // devprofilimage: ""
     },
     onSubmit: async (values, action) => {
       values.pimage = file.name
@@ -66,94 +75,92 @@ const AddProject = () => {
   };
 
   return (
-    <section className="p-20 bg-gradient-to-r from-transparent via-blue-200 to-pink-100"> 
-       <form
-      className="hover:scale-105 m-40 mt-20 p-20 bg-white rounded shadow-2xl transition-all duration-1000 "
-      onSubmit={AddProjectForm.handleSubmit}
-    >
-      <div className="space-y-12">
-        <div className="border-b border-gray-900/10 pb-12">
-        <h1 className="text-xl font-bold leading-tight tracking-tight text-dark md:text-2xl">
-            Project Details
-          </h1>
-          {/* <h2 className="text-base font-semibold leading-7 text-dark">
+    <section className="p-20 bg-gradient-to-r from-transparent via-blue-200 to-green-100">
+      <form
+        className="hover:scale-105 m-40 mt-20 p-20 bg-gray-100 rounded shadow-2xl transition-all duration-1000 "
+        onSubmit={AddProjectForm.handleSubmit}
+      >
+        <div className="space-y-12">
+          <div className="border-b border-gray-900/10 pb-12">
+            <h1 className="text-xl font-bold leading-tight tracking-tight text-dark md:text-2xl">
+              Project Details
+            </h1>
+            {/* <h2 className="text-base font-semibold leading-7 text-dark">
             Project Details
           </h2> */}
-          <p className="mt-1 text-sm leading-6 text-gray-600">
-            Add the details of your project
-          </p>
+            <p className="mt-1 text-sm leading-6 text-gray-600">
+              Add the details of your project
+            </p>
 
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-4">
-              <label className="me-2 text-sm font-medium leading-6 text-gray-900">
-                Title
-              </label>
-              <span style={{ color: "red", fontSize: "8" }}>
-                {AddProjectForm.touched.ptitle && AddProjectForm.errors.ptitle}
-              </span>
-              <div className="mt-2">
-                <input
-                  id="ptitle"
-                  type="text"
-                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
-              
-                  onChange={AddProjectForm.handleChange}
-                  value={AddProjectForm.values.ptitle}
-                />
+            <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+              <div className="sm:col-span-4">
+                <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                  Title
+                </label>
+                <span style={{ color: "red", fontSize: "8" }}>
+                  {AddProjectForm.touched.ptitle && AddProjectForm.errors.ptitle}
+                </span>
+                <div className="mt-2">
+                  <input
+                    id="ptitle"
+                    type="text"
+                    className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
+
+                    onChange={AddProjectForm.handleChange}
+                    value={AddProjectForm.values.ptitle}
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="sm:col-span-3">
-              <label className="me-2 text-sm font-medium leading-6 text-gray-900">
-                Cateogory
-              </label>
-              <span style={{ color: "red", fontSize: "8" }}>
-                {AddProjectForm.touched.pcateogory &&
-                  AddProjectForm.errors.pcateogory}
-              </span>
-              <div className="mt-2">
-                <select
-                  id="pcateogory"
-                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
-                  onChange={AddProjectForm.handleChange}
-                  value={AddProjectForm.values.pcateogory}
-                >
-                  {/* <option>Reading /Writing</option> */}
-                  <option>Select Cateogory </option>
-                  <option>Information technology </option>
-                  <option>Design </option>
-                  <option>Management </option>
-                  {/* <option>Problem solving/ desicion making </option>
+              <div className="sm:col-span-3">
+                <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                  Cateogory
+                </label>
+                <span style={{ color: "red", fontSize: "8" }}>
+                  {AddProjectForm.touched.pcateogory &&
+                    AddProjectForm.errors.pcateogory}
+                </span>
+                <div className="mt-2">
+                  <select
+                    id="pcateogory"
+                    className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
+                    onChange={AddProjectForm.handleChange}
+                    value={AddProjectForm.values.pcateogory}
+                  >
+                    {/* <option>Reading /Writing</option> */}
+                    <option>Select Cateogory </option>
+                    <option>Information technology </option>
+                    <option>Design </option>
+                    <option>Management </option>
+                    {/* <option>Problem solving/ desicion making </option>
                   <option>Real world authentic projects </option> */}
-                </select>
+                  </select>
+                </div>
               </div>
-            </div>
 
-            
+              <div className="col-span-full">
+                <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                  Description
+                </label>
+                <span style={{ color: "red", fontSize: "8" }}>
+                  {AddProjectForm.touched.pdescription &&
+                    AddProjectForm.errors.pdescription}
+                </span>
+                <div className="mt-2">
+                  <textarea
+                    id="pdescription"
+                    className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
 
-            <div className="col-span-full">
-              <label className="me-2 text-sm font-medium leading-6 text-gray-900">
-                Description
-              </label>
-              <span style={{ color: "red", fontSize: "8" }}>
-                {AddProjectForm.touched.pdescription &&
-                  AddProjectForm.errors.pdescription}
-              </span>
-              <div className="mt-2">
-                <textarea
-                  id="pdescription"
-                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
+                    rows={3}
+                    defaultValue={""}
+                    onChange={AddProjectForm.handleChange}
+                    value={AddProjectForm.values.pdescription}
+                  />
+                </div>
 
-                  rows={3}
-                  defaultValue={""}
-                  onChange={AddProjectForm.handleChange}
-                  value={AddProjectForm.values.pdescription}
-                />
               </div>
-              
-            </div>
 
-            {/* <div className="sm:col-span-4">
+              {/* <div className="sm:col-span-4">
               <label className="me-2 text-sm font-medium leading-6 text-gray-900">
                 Organisation
               </label>
@@ -172,61 +179,192 @@ const AddProject = () => {
               </div>
             </div> */}
 
-            <div className="col-span-full">
+              <div className="col-span-full">
+                <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                  Project Image
+                </label>
+                <span style={{ color: "red", fontSize: "8" }}>
+
+                </span>
+                <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                  <div className="text-center">
+                    <PhotoIcon
+                      className="mx-auto h-12 w-12 text-gray-300"
+                      aria-hidden="true"
+                    />
+                    <div className="mt-4 flex text-sm leading-6 text-gray-600">
+                      <label
+                        htmlFor="file-upload"
+                        className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
+                      >
+                        <span>Upload a file</span>
+                        <input
+
+                          type="file"
+                          // className="sr-only"
+                          onChange={uploadfile}
+                        />
+                      </label>
+                      <p className="pl-1">or drag and drop</p>
+                    </div>
+                    <p className="text-xs leading-5 text-gray-600">
+                      PNG, JPG, GIF up to 10MB
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <span className="w-20 h-2 bg-gray-800 mb-12"></span>
+            
+
+            <h1 className="mt-20 text-xl font-bold leading-tight tracking-tight text-dark md:text-2xl">
+              Developer Information
+            </h1>
+            {/* <h2 className="text-base font-semibold leading-7 text-dark">
+            Project Details
+          </h2> */}
+            {/* <p className="mt-1 text-sm leading-6 text-gray-600">
+            Add the details of your project
+          </p> */}
+
+            <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+              {/* Name */}
+              <div className="sm:col-span-4">
+                <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                  Name
+                </label>
+                <span style={{ color: "red", fontSize: "8" }}>
+                  {AddProjectForm.touched.devname && AddProjectForm.errors.devname}
+                </span>
+                <div className="mt-2">
+                  <input
+                    id="devname"
+                    type="text"
+                    className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
+
+                    onChange={AddProjectForm.handleChange}
+                    value={AddProjectForm.values.devname}
+                  />
+                </div>
+              </div>
+              {/* Introduction */}
+              <div className="col-span-full">
+                <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                  Introduction
+                </label>
+                <span style={{ color: "red", fontSize: "8" }}>
+                  {AddProjectForm.touched.devintro &&
+                    AddProjectForm.errors.devintro}
+                </span>
+                <div className="mt-2">
+                  <textarea
+                    id="devintro"
+                    className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
+
+                    rows={3}
+                    defaultValue={""}
+                    onChange={AddProjectForm.handleChange}
+                    value={AddProjectForm.values.devintro}
+                  />
+                </div>
+
+              </div>
+
+              {/* <div className="sm:col-span-4">
               <label className="me-2 text-sm font-medium leading-6 text-gray-900">
-                Project Image
+                Organisation
               </label>
               <span style={{ color: "red", fontSize: "8" }}>
-               
+                {AddProjectForm.touched.ptitle && AddProjectForm.errors.ptitle}
               </span>
-              <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
-                <div className="text-center">
-                  <PhotoIcon
-                    className="mx-auto h-12 w-12 text-gray-300"
-                    aria-hidden="true"
+              <div className="mt-2">
+                <input
+                  id="porganisation"
+                  className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
+
+                  type="text"
+                  onChange={AddProjectForm.handleChange}
+                  value={AddProjectForm.values.porganisation}
+                />
+              </div>
+            </div> */}
+
+                {/* Github Link */}
+              <div className="sm:col-span-4">
+                <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                  GitHub Link
+                </label>
+                <span style={{ color: "red", fontSize: "8" }}>
+                  {AddProjectForm.touched.devgithublink & AddProjectForm.errors.devgithublink}
+                </span>
+                <div className="mt-2">
+                  <input
+                    id="devgithublink"
+                    type="text"
+                    className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
+
+                    onChange={AddProjectForm.handleChange}
+                    value={AddProjectForm.values.devgithublink}
                   />
-                  <div className="mt-4 flex text-sm leading-6 text-gray-600">
-                    <label
-                      htmlFor="file-upload"
-                      className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
-                    >
-                      <span>Upload a file</span>
-                      <input
-                    
-                        type="file"
-                        // className="sr-only"
-                       onChange={uploadfile}
-                      />
-                    </label>
-                    <p className="pl-1">or drag and drop</p>
+                </div>
+              </div>
+                {/* Profile image */}
+              <div className="col-span-full">
+                <label className="me-2 text-sm font-medium leading-6 text-gray-900">
+                  Profile image
+                </label>
+                <span style={{ color: "red", fontSize: "8" }}>
+
+                </span>
+                <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                  <div className="text-center">
+                    <PhotoIcon
+                      className="mx-auto h-12 w-12 text-gray-300"
+                      aria-hidden="true"
+                    />
+                    <div className="mt-4 flex text-sm leading-6 text-gray-600">
+                      <label
+                        htmlFor="file-upload"
+                        className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
+                      >
+                        <span>Upload a file</span>
+                        <input
+
+                          type="file"
+                          // className="sr-only"
+                          onChange={uploadfile}
+                        />
+                      </label>
+                      <p className="pl-1">or drag and drop</p>
+                    </div>
+                    <p className="text-xs leading-5 text-gray-600">
+                      PNG, JPG, GIF up to 10MB
+                    </p>
                   </div>
-                  <p className="text-xs leading-5 text-gray-600">
-                    PNG, JPG, GIF up to 10MB
-                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button
-          type="submit"
-          className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
-        >
-          Submit
-        </button>
-        <button
-          type="reset"
-          className="text-sm font-semibold leading-6 text-gray-900"
-        >
-          Cancel
-        </button>
-      </div>
-    </form>
+        <div className="mt-6 flex items-center justify-end gap-x-6">
+          <button
+            type="submit"
+            className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+          >
+            Submit
+          </button>
+          <button
+            type="reset"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
     </section>
-   
+
   );
 };
 

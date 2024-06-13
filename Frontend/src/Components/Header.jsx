@@ -66,7 +66,7 @@ const Header = () => {
   }; 
   
   return (
-     <div className="bg-gradient-to-r from-transparent via-blue-200 to-pink-100 ">
+     <div className="bg-gradient-to-r from-transparent via-blue-200 to-green-100 ">
       
       {/*Start Background Animation Body*/}
       <div className="area">
@@ -139,7 +139,7 @@ const Header = () => {
             </p>
           </div>
           <div className="container space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
-            <div className="hover:bg-black/50 bg-black/50 hover:scale-110 transition duration-1000  p-4 hover:border border-0 rounded-2xl shadow ">
+            <div className="hover:bg-gradient-to-r from-gray-800 to-voilet-500 bg-black hover:scale-110 transition duration-1000  p-4 hover:border border-0 rounded-2xl shadow ">
               <div className=" flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 ">
                 <svg
                   className="animate-pulse tansition duration-100 w-5 h-5  text-primary-600 lg:w-6 lg:h-6 "
@@ -159,7 +159,7 @@ const Header = () => {
               Exhibix is to facilitate the recognition of outstanding student projects, thereby fostering a culture of academic excellence and celebrating the diverse achievements across various departments.
               </p>
             </div>
-            <div className="hover:bg-black/50 bg-black/50 hover:scale-110 transition duration-1000 p-4 hover:border border-0 rounded-2xl shadow">
+            <div className="hover:bg-gradient-to-r from-gray-800 to-voilet-500 bg-black hover:scale-110 transition duration-1000 p-4 hover:border border-0 rounded-2xl shadow">
               <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                 <svg
                   className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
@@ -175,7 +175,7 @@ const Header = () => {
               Exhibix aims to promote interdisciplinary collaboration by providing a platform where students from different departments can showcase their projects, fostering cross-pollination of ideas and innovation.
               </p>
             </div>
-            <div className="hover:bg-black/50 bg-black/50 hover:scale-110 transition duration-1000 p-4 hover:border border-0 rounded-2xl shadow">
+            <div className="hover:bg-gradient-to-r from-gray-800 to-voilet-500 bg-black hover:scale-110 transition duration-1000 p-4 hover:border border-0 rounded-2xl shadow">
               <div className=" flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                 <svg
                   className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"

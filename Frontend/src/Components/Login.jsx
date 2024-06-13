@@ -52,10 +52,10 @@ const Login = () => {
     validationSchema: LoginSchema,
   });
   return (
-    <section className="vh-100 flex items-center justify-center bg-gradient-to-r from-transparent via-blue-200 to-pink-100 ">
+    <section className="vh-100 flex items-center justify-center bg-gradient-to-r from-transparent via-blue-200 to-green-100 ">
       <div className="mt-20 w-2/5">
         <form
-          className="hover:scale-110 p-8 rounded shadow-2xl bg-white transition-all duration-1000"
+          className="hover:scale-110 p-8 rounded shadow-2xl bg-gray-100 transition-all duration-1000"
           onSubmit={loginForm.handleSubmit}
         >
           <div className="space-y-12 mb-5">

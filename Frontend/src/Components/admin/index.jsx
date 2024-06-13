@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 
 const Admin = () => {
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen bg-gradient-to-r from-transparent via-blue-200 to-green-100">
       <div class=" grid grid-rows-3 grid-flow-col ">
         <div class="row-span-3 ...">
           <Sidebar/>

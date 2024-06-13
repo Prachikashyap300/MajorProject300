@@ -6,6 +6,9 @@ const projectSchema = new Schema({
     pdescription : String,
     // poragnaisation : String,
     pimage : String,
+    devname: String,
+    devintro: String,
+    devgithublink: String,
     verified: {type: Boolean, default: false}
 });
 

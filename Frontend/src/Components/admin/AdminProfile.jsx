@@ -6,20 +6,20 @@ const AdminProfile = () => {
   return (
     <div>
       <div>
-        <div className="text-center my-72 text-7xl">
+        {/* <div className="text-center my-72 text-7xl font-bold">
           <p>Welcome to Admin Dashboard</p>
-        </div>
+        </div> */}
       {/* <ManageUser/> */}
-        {/* <div className="mt-2.5 ml-0.5">
+        <div className="text-center my-72">
           <h1 >
             <ReactTyped
-              className="text-3xl "
+              className="text-7xl font-bold "
               strings={["Welcome to Admin Dashboard"]}
-              typeSpeed={100}
+              typeSpeed={150}
               loop
             />
           </h1>
-        </div> */}
+        </div>
 
           
       </div>
