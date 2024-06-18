@@ -26,7 +26,7 @@ const AdminLogin = () => {
     },
     onSubmit: async (values, action) => {
       console.log(values);
-      const res = await fetch("http://localhost:4000/user/authenticate", {
+      const res = await fetch("http://localhost:4000/admin/authenticate", {
         method: "POST",
         body: JSON.stringify(values),
         headers: {
@@ -39,7 +39,7 @@ const AdminLogin = () => {
       if (res.status === 200) {
         enqueueSnackbar("Login successful", { variant: "success" });
         setLoggedIn(true);
-        navigate("/");
+        navigate("/admin/ManageUser");
 
         const data = await res.json();
         console.log(data);
@@ -103,7 +103,7 @@ const AdminLogin = () => {
 
           <button
             type="submit"
-            class="w-50 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            class="w-100 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
           >
             Login
           </button>

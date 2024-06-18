@@ -19,7 +19,7 @@
     const displayProjects = () => {
       return projects.map((item) => (
         <div class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-110 hover:shadow-xl">
-          <Link to="/user/ViewProject">
+          <Link to={"/user/ViewProject/" + item._id}>
             <img
               src={"http://localhost:4000/" + item.pimage}
               alt="Product"

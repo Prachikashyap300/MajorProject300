@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+  import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { enqueueSnackbar } from "notistack";
@@ -152,7 +152,7 @@ const AddProject = () => {
                     className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
 
                     rows={3}
-                    defaultValue={""}
+                    
                     onChange={AddProjectForm.handleChange}
                     value={AddProjectForm.values.pdescription}
                   />

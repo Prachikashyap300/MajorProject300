@@ -4,6 +4,7 @@ const port = 4000;
 const cors = require('cors');
 
 const userRouter = require('./Routers/User');
+const adminRouter = require('./Routers/Admin');
 const projectRouter = require('./Routers/Project');
 const utilRouter = require('./Routers/Util');
 const contactRouter = require('./Routers/Contact');
@@ -18,6 +19,7 @@ app.use(cors({
 // middleware
 app.use(express.json());
 app.use('/user', userRouter); 
+app.use('/admin', adminRouter); 
 app.use('/project', projectRouter);
 app.use('/util', utilRouter);
 app.use('/contact', contactRouter);

@@ -17,19 +17,22 @@ const ViewProject = () => {
   };
   useEffect(() => {
     fetchProject();
-  }, [id]);
+  }, []);
 
  
   return (
     <div className="min-h-screen bg-gradient-to-r from-transparent via-blue-200 to-pink-100 ">
       <div className="p-40">
+        {
+          project !== null ? (
+
         <div className="max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row -mx-4">
             <div className="md:flex-1 px-4">
               <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
                 <img
                   className="w-full h-full object-cover"
-                  src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz1VVsrmRqJPA3CbWiT4gDgH5_jYhgPa0wRA&s"}//project.pimage
+                  src={"http://localhost:4000/"   + project.pimage}//project.pimage
                   alt="Product Image"
                 />
               </div>
@@ -48,17 +51,16 @@ const ViewProject = () => {
             </div>
             <div className="md:flex-1 px-4">
               <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-                Project Title
+                Project Title:
                 {project.ptitle}
               </h2>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ante
-                justo. Integer euismod libero id mauris malesuada tincidunt.
+               Project Description: {project.pdescription}
               </p>
 
               <div className="mb-4">
                 <span className="font-bold text-gray-700 dark:text-gray-300">
-                  Cateogory
+                  Cateogory: {project.pcategory}
                 </span>
                 <div className="flex items-center mt-2">
                   <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-20 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">
@@ -72,13 +74,7 @@ const ViewProject = () => {
                   Description:
                 </span>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
-                  ante justo. Integer euismod libero id mauris malesuada tincidunt.
-                  Vivamus commodo nulla ut lorem rhoncus aliquet. Duis dapibus augue
-                  vel ipsum pretium, et venenatis sem blandit. Quisque ut erat vitae
-                  nisi ultrices placerat non eget velit. Integer ornare mi sed ipsum
-                  lacinia, non sagittis mauris blandit. Morbi fermentum libero vel
-                  nisl suscipit, nec tincidunt mi consectetur.
+                 {project.pdescription}
                 </p>
               </div>
               <div className="mb-4 mt-5">
@@ -102,6 +98,12 @@ const ViewProject = () => {
             </div>
           </div>
         </div>
+          ):(
+            <div>
+              <h1>No Product Found....</h1>
+            </div>
+          )
+        }
       </div>
 
 

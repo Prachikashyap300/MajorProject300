@@ -22,11 +22,13 @@ const AdminSignup = () => {
   const AdminSignupForm = useFormik({
     initialValues: {
       email: "",
+      name:"",
       password: "",
+      cpassword:"",
     },
     onSubmit: async (values, action) => {
       console.log(values);
-      const res = await fetch("http://localhost:4000/user/authenticate", {
+      const res = await fetch("http://localhost:4000/admin/add", {
         method: "POST",
         body: JSON.stringify(values),
         headers: {
@@ -37,16 +39,16 @@ const AdminSignup = () => {
       action.resetForm();
 
       if (res.status === 200) {
-        enqueueSnackbar("Login successful", { variant: "success" });
+        enqueueSnackbar("Signup successful", { variant: "success" });
         setLoggedIn(true);
-        navigate("/");
+        navigate("/AdminLogin");
 
         const data = await res.json();
         console.log(data);
         //to save user data ini session , inbuilt api session storage
-        sessionStorage.setItem("user", JSON.stringify(data));
+        sessionStorage.setItem("admin", JSON.stringify(data));
       } else {
-        enqueueSnackbar("Login failed", { variant: "error" });
+        enqueueSnackbar("Signup failed", { variant: "error" });
       }
     },
     validationSchema: AdminSignupSchema,
@@ -60,10 +62,27 @@ const AdminSignup = () => {
         >
           <div className="space-y-12 mb-5">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl">
-              Admin Login
+              Admin Signup
             </h1>
 
             <div className="">
+              <div className="">
+                <label className="block text-sm font-medium leading-6 text-gray-900">
+                  Name
+                </label>
+                <span style={{ color: "red", fontSize: "8" }}>
+                  {AdminSignupForm.touched.email && AdminSignupForm.errors.email}
+                </span>
+                <div className="mt-1">
+                  <input
+                    type="text"
+                    id="name"
+                    className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
+                    onChange={AdminSignupForm.handleChange}
+                    value={AdminSignupForm.values.name}
+                  />
+                </div>
+              </div>
               <div className="">
                 <label className="block text-sm font-medium leading-6 text-gray-900">
                   Email address
@@ -98,16 +117,33 @@ const AdminSignup = () => {
                   />
                 </div>
               </div>
+              <div className="mt-8">
+                <label className="block text-sm font-medium leading-6 text-gray-900">
+                  Repeat Password
+                </label>
+                <span style={{ color: "red", fontSize: "8" }}>
+                  {AdminSignupForm.touched.cpassword && AdminSignupForm.errors.cpassword}
+                </span>
+                <div className="mt-1">
+                  <input
+                    type="password"
+                    id="cpassword"
+                    className="hover:scale-95 transition-all duration-1000 bg-slate-50/50 border-bottom shadow-bottom text-gray-900 sm:text-sm rounded-lg outline-none block w-full p-2.5  "
+                    onChange={AdminSignupForm.handleChange}
+                    value={AdminSignupForm.values.cpassword}
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
           <button
             type="submit"
-            class="w-50 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            class="w-100 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
           >
-            Login
+            Signup
           </button>
-          <div className="flex  text-sm">
+          {/* <div className="flex  text-sm">
             <p className="mt-3 justify-content-between text-sm font-light text-gray-500 dark:text-gray-400">
               Don't have an account?{" "}
               <Link
@@ -119,7 +155,7 @@ const AdminSignup = () => {
               <p><Link to="/ForgetPassword">Forgot Password?</Link></p>
             </p>
             
-          </div>
+          </div> */}
         </form>
       </div>
     </section>
